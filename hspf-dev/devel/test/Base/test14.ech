@@ -1,0 +1,142 @@
+ ************************************************************
+ *                                                          *
+ *        Hydrological Simulation Program - FORTRAN         *
+ *                                                          *
+ ************************************************************
+ 
+   Developed for:                Modified and Maintained by
+ 
+     U.S. Environmental            Aqua Terra Consultants
+       Protection Agency           (650)962-1864
+     Office of Research            email: hspf@aquaterra.com
+       and Development
+     Center for Exposure
+       Assessment Modeling
+     Athens, Georgia
+     (706)355-8400
+     email: ceam@epamail.epa.gov
+ 
+   In cooperation with:
+ 
+     U.S. Geological Survey                Release 12.2
+     Water Resources Discipline            July 2005
+     Office of Surface Water
+     Reston, Virginia
+     email: h2osoft@usgs.gov
+ 
+ 
+ Start of Job
+ 
+ PREPROCESSING USERS CONTROL INPUT.
+ 
+ SEARCHING FOR BOUNDARIES OF NEXT DATA SET IN USERS CONTROL INPUT.
+ 
+ FOUND RUN 
+ FOUND END RUN 
+ 
+ INTERPRETING RUN DATA SET IN USERS CONTROL INPUT
+ 
+ FOUND GLOBAL      
+ FOUND END GLOBAL      
+ FOUND FILES       
+ FOUND END FILES       
+ FOUND OPN SEQUENCE
+ FOUND END OPN SEQUENCE
+ FOUND MUTSIN      
+ FOUND END MUTSIN      
+ FOUND EXT TARGETS 
+ FOUND END EXT TARGETS 
+ FOUND PATHNAMES   
+ FOUND END PATHNAMES   
+ 
+ 
+ ====================================================================================================================================
+ PROCESSING GLOBAL BLOCK
+
+ GENERAL RUN INFORMATION:    Version 11 test run:  Inputting test data to DSS
+
+   START       1976              END    1976
+
+ START AND END DATE/TIMES TRANSLATE TO THE FOLLOWING, IN INTERNAL FORMAT:  1975/12/31 24:60    1976/12/31 24:60
+
+ RUN INTERPRETER OUTPUT LEVEL HAS BEEN SET TO:  3
+ RUNTIME SPECIAL ACTION OUTPUT LEVEL HAS BEEN SET TO:  2
+ 
+ SYSTEM HAS BEEN ASKED TO INTERPRET AND EXECUTE THE RUN.  RUNFG =    1
+ THE UNIT SYSTEM OF THE RUN WILL BE ENGLISH.  EMFG =     1
+ 
+ FINISHED PROCESSING GLOBAL BLOCK
+ ====================================================================================================================================
+ 
+ ====================================================================================================================================
+ CATEGORY BLOCK NOT FOUND
+ 
+ FINISHED PROCESSING CATEGORY BLOCK
+ ====================================================================================================================================
+ 
+ ====================================================================================================================================
+ PROCESSING OPN SEQUENCE BLOCK
+ 
+ 
+ USERS CONTROL INPUT IS:
+     OPN SEQUENCE                                                                    
+           MUTSIN       1   INDELT 24:00                                             
+     END OPN SEQUENCE                                                                
+
+ FINISHED PROCESSING OPN SEQUENCE BLOCK
+ ====================================================================================================================================
+
+ ====================================================================================================================================
+ PROCESSING PATHNAMES BLOCK
+ 
+ USERS CONTROL INPUT IS:
+     PATHNAMES                                                                       
+     <ds>f# <ctype-> <***************************pathname***************************>
+       41 1 PER-CUM  /TEST/FARM COOP WS/EVAP//1DAY/OBSERVED-INCHES|DAY/              
+       42 1 PER-CUM  /TEST/FARM COOP WS/WIND//1DAY/OBSERVED-MILES|DAY/               
+      113 2 PER-AVER /TEST/MARSHALTOWN/FLOW//1DAY/OBSERVED-CFS/                      
+      119 2 PER-AVER /TEST/MARENGO/FLOW//1DAY/OBSERVED-CFS/                          
+      124 1 PER-AVER /TEST/CEDAR RAPIDS/DEWPOINT//1DAY/OBSERVED-DEG F/               
+      125 1 PER-AVER /TEST/IOWA FALLS/DEWPOINT//1DAY/OBSERVED-DEG F/                 
+      126 1 PER-AVER /TEST/MARSHALTOWN/DEWPOINT//1DAY/OBSERVED-DEG F/                
+      127 2 PER-CUM  /TEST/MARENGO/SEDIMENT//1DAY/OBSERVED-LBS|ACRE/                 
+      134 2 INST-VAL /TEST/IOWA RIVER/WATER TEMP//1DAY/ESTIMATED-DEG C/              
+      136 2 PER-AVER /TEST/ROWAN/FLOW//1DAY/OBSERVED-CFS/                            
+     END PATHNAMES                                                                   
+
+ FINISHED PROCESSING PATHNAMES BLOCK
+ ====================================================================================================================================
+
+ ====================================================================================================================================
+ PROCESSING MUTSIN   BLOCK
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ PROCESSING MUTSIN OPERATION NO.    1
+ 
+      MUTFL       NPT       NMN       NLI      MSFG
+         91         1         9        25         0
+
+ FINISHED PROCESSING MUTSIN OPERATION NO.    1
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ FINISHED PROCESSING MUTSIN   BLOCK
+ ====================================================================================================================================
+
+ ====================================================================================================================================
+ SPEC-ACTIONS BLOCK NOT FOUND
+
+ FINISHED PROCESSING SPEC-ACTIONS BLOCK
+ ====================================================================================================================================
+
+ ====================================================================================================================================
+ PROCESSING BLOCKS CONTAINING TIME SERIES LINKAGES
+
+
+
+ ********** DSS ******** ERROR DURING READ
+ ZGTREC, Invalid address:    1397052463,  File Size:          9716
+
+ UNIT =      21 RECORD =11000414  WORD =      12  SIZE:     127
+ ADDRESS:   1397052463
+ Error Code   70,  occuring in subroutine ZGTREC
+ Last Pathname Accessed: /TEST/IOWA FALLS/DEWPOINT/01JAN1976/1DAY/OBSERVED-DEG F/

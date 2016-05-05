@@ -1,0 +1,351 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+  clu  grpnam  description
+  ___  ______  _______________________________________
+  125  inflts  interaction for flat file input of timeseries data
+END COMMENT
+CLU          125    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  INFLTS
+  END LABEL
+  DATA   CLU   125
+#GROUP    1 TYPE MENU
+$WINDOW Timeseries (IT)
+$SCREEN
+ Select a Timeseries option:
+
+  Define the following:                  Modify data-set parameters as needed:
+    @SOurce  !                             @Location !
+    @Format  !                             @Time !
+    @Dataset !                             @SPace !
+
+  @Process !
+
+  @Return  !
+$DEFAULT 1
+$LENGTH  9
+$OPTION SOurce
+_DESC - file containing data
+_HELP
+Specify the flat file containing the
+time-series data to be input to the WDM file.
+$OPTION Format
+_DESC - of data on source file
+_HELP
+Specify the format of the data on the source flat file.
+$OPTION Dataset
+_DESC - for storing data
+_HELP
+Specify the data-set number on the WDM file
+in which to store the time-series data.
+$OPTION Location
+_DESC and description
+_HELP
+
+Modify location and description attributes for the data set.
+$OPTION Time
+_DESC parameters
+_HELP
+
+Modify time related parameters for data set if desired.
+$OPTION SPace
+_DESC parameters
+_HELP
+
+Modify space allocation parameters for data set if desired.
+$OPTION Process
+_DESC - the input source file
+_HELP
+Perform the reading of the flat file and store the time-series data
+on the WDM file/data-set number.  Data-set attributes and parameters
+may be specified.
+$OPTION Return
+_DESC - to Input screen
+_HELP
+Return one level higher when done with flat file time-series input.
+#GROUP   10 TYPE PRM1
+$WINDOW Source (ITS)
+$SCREEN
+
+      Name of file for input:
+      [@FILE...........................................................]
+
+      Number of header lines in file: [@IH]
+$FIELD @FILE
+_TYPE FILE
+_VALID STATUS: OLD
+_HELP
+Enter the name of the file containing the time-series values
+to be input to the WDM file.
+$FIELD @IH
+_TYPE INTEGER
+_RANGE 0 : -999
+_DEFAULT 0
+_HELP
+Enter the number of lines at the beginning of the file which do not
+contain time-series values and should be skipped over.
+#GROUP   20 TYPE PRM1
+$WINDOW Format (ITF)
+$SCREEN
+
+  Specify format for data being read from source file:
+
+  [@DFMT...........................................................]
+
+  Beginning of source file:
+$FIELD @DFMT
+_TYPE CHARACTER
+_HELP
+Use letters to define fields for date, time, value, or space:
+  Y-Year, M-Month, D-Day, H-Hour, N-Minute, S-Second, V-Value, X-Skip
+Follow each with the size of the field.  Separate fields with a comma.
+Use F to define field separators followed by either the actual field
+separator character or the ASCII number (9 for tab) for that character.
+If a field is followed by a separator, the field length is not required.
+Example:1991.12.25        17.2
+  use:Y,F.,M,F.,D,F9,V9  (if periods and Tab used for separators)
+  use:Y4,X1,M2,X1,D2,V9  (if fixed field format)
+Repetition is done by preceeding the field definition with a number.
+Examples:  6V8      6(V,F9)      (V8)--> repeats till end of record
+#GROUP   21 TYPE TEXT
+$WINDOW Format (ITF) Problem
+$TEXT
+A source input flat file must be specified before
+the data format may be defined.
+
+To specify an input source flat file, select the Source option.
+#GROUP   30 TYPE PRM1
+$WINDOW Dataset (ITD)
+$SCREEN
+
+  Specify target Data-set and status:
+
+    Data-set number: [@DSN.]
+
+    Data-set status:  @ New
+                      @ Find
+                      @ Enter
+
+    Overwrite existing data: [@OV]
+$FIELD @DSN
+_TYPE INTEGER
+_RANGE 1 : 32000
+_HELP
+Enter the number of the data set on which you wish to store the
+time-series values being input.
+$FIELD @ New
+_TYPE OPTION
+_SET 1
+_ONOFF @ Find, @ Enter
+_HIDE ON @OV 10 5 10 34
+_HELP
+
+     The data on the flat file will be placed in a new data set,
+     specified in the "Data-set number" field.
+$FIELD @ Find
+_TYPE OPTION
+_SET 1
+_ONOFF @ New, @ Enter
+_HELP
+     The data on the flat file will be placed in an existing data set,
+     which the program will identify as the data is being processed,
+     based on such attributes as TSTYPE, STAID, and ISTAID.  If a
+     unique data set is not found, a new data set will be created.
+$FIELD @ Enter
+_TYPE OPTION
+_SET 1
+_ONOFF @ New, @ Find
+_HELP
+
+     The data on the flat file will be placed in an existing data set,
+     which you will be asked to identify as the data is being processed.
+$FIELD @OV
+_TYPE CHARACTER
+_VALID NO, YES
+_DEFAULT NO
+_HELP
+If data is found on an existing data set for the same period as the data
+being processed, should the data being processed overwrite the original.
+#GROUP   50 TYPE PRM1
+$WINDOW Time (ITT)
+$SCREEN
+ Modify Time parameters as required:
+
+  base year (TSBYR)     [@BYR]           compression (COMPFG)   [@COMPFG....]
+  time step (TSSTEP)    [@TST]           variable time (VBTIME) [@VBTIME.]
+  time units (TCODE)    [@TCODE.]        filler value (TSFILL)  [@TSFILL..]
+  data groups (TGROUP)  [@TGROUP]        time tag               [@TTAG]
+  form of data (TSFORM) [@TSFORM.....]   quality code           [@QC]
+
+  Start:  Yr [@SYR]  Mo [@SM]  Dy [@SD]  Hr [@SH]  Mi [@SI]  Se [@SS]
+  End:    Yr [@EYR]  Mo [@EM]  Dy [@ED]  Hr [@EH]  Mi [@EI]  Se [@ES]
+$FIELD @BYR
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:1000000
+_DEFAULT 1900
+_HELP
+Base, or starting, year for data group pointers.  The number of group
+pointers is set under the space allocation.  The units of the group
+pointers is TGROUP.  Combined, these parameters determine the period of
+record that can be stored in the data set.  Ex.  TSBYR=1970, TGROUP=Month,
+Max no. of data groups=250 --> period of record is Jan 1970 - Sep 1990
+(250 months of data).
+$FIELD @TST
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:1440
+_DEFAULT 1
+_HELP
+Time step, in TCODE units
+$FIELD @TCODE
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID SECOND,MINUTE,HOUR,DAY,MONTH,YEAR
+_DEFAULT DAY
+_HELP
+Time units of the time-series data
+$FIELD @TGROUP
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID HOUR,DAY,MONTH,YEAR,CENTURY
+_DEFAULT DAY
+_HELP
+Units for data group pointers.  Must be greater than the
+time units (TCODE).
+$FIELD @TSFORM
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID MEAN,TOTAL,INSTANTANEOUS,MINIMUM,MAXIMUM
+_DEFAULT MEAN
+_HELP
+Form of the data is:
+ 1 - Mean, over the time step         4 - MInimum of the time step
+ 2 - Total over the time step         5 - MAximum over the time step
+ 3 - Instantaneous at end of time step
+$FIELD @COMPFG
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID COMPRESSED,UNCOMPRESSED
+_DEFAULT COMPRESSED
+_HELP
+Compressed data will take up less space in the WDM file, but may require
+a COPY operation to modify data values.
+$FIELD @VBTIME
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID CONSTANT,VARIABLE
+_DEFAULT CONSTANT
+_HELP
+A data set may contain series of data at different time steps.  Such a
+data set would have a Variable time step.  Most data sets will have a
+Constant time step.  Retrieval times are faster for data with Constant
+time step.
+$FIELD @TSFILL
+_TYPE REAL
+_RANGE -999:-999
+_DEFAULT 0.0
+_HELP
+Periods of missing record will be set to the TSFILL value when data
+is retrieved from the data set.
+$FIELD @TTAG
+_TYPE CHARACTER
+_VALID BEGIN, END
+_HELP
+Time tag of the data.
+Use BEGIN if the data values are tagged to the start of each time interval.
+Use END if the data values are tagged to the end of each time interval.
+$FIELD @QC
+_TYPE INTEGER
+_RANGE 0 : 30
+_HELP
+Quality code of the data.
+$FIELD @SYR
+_TYPE INTEGER
+_RANGE 1900 : 3000
+_HELP
+Starting year of the data.
+$FIELD @SM
+_TYPE INTEGER
+_RANGE 1 : 12
+_HELP
+Starting month of the data.
+$FIELD @SD
+_TYPE INTEGER
+_RANGE 1 : 31
+_HELP
+Starting day of the data.
+$FIELD @SH
+_TYPE INTEGER
+_RANGE 1 : 24
+_HELP
+Starting hour of the data.
+$FIELD @SI
+_TYPE INTEGER
+_RANGE 1 : 60
+_HELP
+Starting minute of the data.
+$FIELD @SS
+_TYPE INTEGER
+_RANGE 1 : 60
+_HELP
+Starting second of the data.
+$FIELD @EYR
+_TYPE INTEGER
+_RANGE 1900 : 3000
+_HELP
+Ending year of the data.
+$FIELD @EM
+_TYPE INTEGER
+_RANGE 1 : 12
+_HELP
+Ending month of the data.
+$FIELD @ED
+_TYPE INTEGER
+_RANGE 1 : 31
+_HELP
+Ending day of the data.
+$FIELD @EH
+_TYPE INTEGER
+_RANGE 1 : 24
+_HELP
+Ending hour of the data.
+$FIELD @EI
+_TYPE INTEGER
+_RANGE 1 : 60
+_HELP
+Ending minute of the data.
+$FIELD @ES
+_TYPE INTEGER
+_RANGE 1 : 60
+_HELP
+Ending second of the data.
+#GROUP   70 TYPE TEXT
+$WINDOW Process (ITP)
+$TEXT
+Time-series data from source file being added to dsn &.
+#GROUP   71 TYPE TEXT
+$WINDOW Process (ITP) Problem
+$TEXT
+A source input flat file must be specified before
+the time-series data may be processed.
+
+To specify an input source flat file, select the Source option.
+#GROUP   72 TYPE TEXT
+$WINDOW Process (ITP) Problem
+$TEXT
+Unable to process input flat file without a format.
+
+To enter a format, select the Format option.
+#GROUP   73 TYPE TEXT
+$WINDOW Process (ITP) Problem
+$TEXT
+Problem using specified data set for storing time-series data.
+
+Specify a different data-set number and try again.
+
+To specify a data-set number, use the Dataset option.
+  END DATA
+END CLU

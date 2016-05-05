@@ -1,0 +1,1377 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+  clu  grpnam  description
+  ___  ______  _____________________________________________
+  103  inopt   data-set processing options
+  104  indsop  data-set optons: loc&desc, space&time, number
+   49  errors  miscellaneous wdm error codes
+END COMMENT
+CLU          103    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  INOPT
+  END LABEL
+  DATA   CLU   103
+#GROUP    1  TYPE MENU
+$WINDOW & (I&)
+$SCREEN
+Select an input option:
+
+@Source
+@Options
+@Process
+
+@Return
+$DEFAULT 1
+$LENGTH 7
+$OPTION Source
+_DESC - open a source file
+_HELP
+Use this option to open a file for input.
+Can also be used to look at ascii files.
+$OPTION Options
+_DESC - for input, output, and processing
+_HELP
+Use to define options related to attributes, data-set
+numbers and how to process the input file.
+$OPTION Process
+_DESC - the input file
+_HELP
+Select Process after the input file has been opened and
+any required attribute and data-set "Options" have been
+defined.
+$OPTION Return
+_DESC - to Input screen
+_HELP
+Select "Return" when you are done processing data or you want
+to process a different kind of file format.
+#GROUP    2  TYPE MENU
+$WINDOW & (I&)
+$SCREEN
+Select an input option:
+ 
+@Source
+@Options
+@Format
+@Process
+ 
+@Return
+$DEFAULT 1
+$LENGTH 7
+$OPTION Source
+_DESC - open a source file
+_HELP
+Use this option to open a file for input.
+Can also be used to look at ascii files.
+$OPTION Options
+_DESC - for input, output, and processing
+_HELP
+Use to define options related to attributes, data-set
+numbers and how to process the input file.
+$OPTION Format
+_DESC - of input file
+_HELP
+Define the format of the input file.
+$OPTION Process
+_DESC - the input file
+_HELP
+Select Process after the input file has been opened and
+any required attribute and data-set "Options" have been
+defined.
+$OPTION Return
+_DESC - to Input screen
+_HELP
+Select "Return" when you are done processing data or you
+want to process a different kind of file format.
+#GROUP    5  TYPE TEXT
+$WINDOW Process (IDP) error
+$TEXT
+
+  An input file has not been opened.
+  Select "Source" to open an input file for "Process"ing.
+
+#GROUP   10  TYPE PRM1
+$WINDOW Options (I&O)
+$SCREEN
+
+       Select data-set processing options:
+
+  Confirm processing for:        Data-set status:
+      @ No data sets                 @ New
+      @ First data set               @ Find
+      @ All data sets                @ Enter
+
+  First dsn: @dsnf
+  Increment: @dsni
+$FIELD @ No
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ First, @ All, @ Enter
+_HELP
+
+     All of the input data will be processed using defaults and
+     available information.  You will have no opportunity to add
+     or modify attributes, choose a dsn or change space allocations.
+$FIELD @ First
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ All, @ Enter
+_HELP
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for the first set of data
+     being processed.  The values you select will be used as defaults
+     for the rest of the sets of data being processed.
+$FIELD @ All
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ First
+_HELP
+
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for all sets of data that
+     are being processed.
+$FIELD @ New
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ Find, @ Enter
+_HELP
+
+     Each new set of data will be placed in a new data set, beginning
+     at "First dsn", and continuing in increments of "Increment".
+
+$FIELD @ Find
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Enter
+_HELP
+     Each new set of data will be placed in an existing data set, which
+     the program will identify as the data is being processed, based on
+     such attributes as TSTYPE, STAID, and ISTAID.  If a unique data
+     set is not found, a new data set will be created.
+$FIELD @ Enter
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Find
+_HELP
+
+     Each new set of data will be placed in an existing data set, which
+     you will be asked to identify as the data is being processed.
+
+$FIELD @dsnf
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+     The "New" input data will be placed in this "First dsn".
+     If this dsn already exists, the number will be "Increment"ed
+     until an unused dsn if found.  This dsn will also be used if a
+     "Find" data set cannot be found.
+$FIELD @dsni
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+
+     The "First dsn" will be incremented by this value for each
+     successive data set to be added to the wdm file.
+
+#GROUP   11  TYPE PRM1
+$WINDOW Options (I&O)
+$SCREEN
+
+                    Select data-set processing options:
+
+  Confirm processing for:        Data-set status:        Data-set type:
+      @ No data sets                 @ New                   @ Time
+      @ First data set               @ Find                  @ Table
+      @ All data sets                @ Enter
+
+  First dsn: @dsnf        Year or season begins: @Ybgn....
+  Increment: @dsni                         ends: @Yend....
+$FIELD @ No
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ First, @ All, @ Enter
+_HELP
+
+     All of the input data will be processed using defaults and
+     available information.  You will have no opportunity to add
+     or modify attributes, choose a dsn or change space allocations.
+$FIELD @ First
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ All, @ Enter
+_HELP
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for the first set of data
+     being processed.  The values you select will be used as defaults
+     for the rest of the sets of data being processed.
+$FIELD @ All
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ First
+_HELP
+
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for all sets of data that
+     are being processed.
+$FIELD @ New
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ Find, @ Enter
+_HELP
+
+     Each new set of data will be placed in a new data set, beginning
+     at "First dsn", and continuing in increments of "Increment".
+
+$FIELD @ Find
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Enter
+_HELP
+     Each new set of data will be placed in an existing data set, which
+     the program will identify as the data is being processed, based on
+     such attributes as TSTYPE, STAID, and ISTAID.  If a unique data
+     set is not found, a new data set will be created.
+$FIELD @ Enter
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Find
+_HELP
+
+     Each new set of data will be placed in an existing data set, which
+     you will be asked to identify as the data is being processed.
+
+$FIELD @dsnf
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+     The "New" input data will be placed in this "First dsn".
+     If this dsn already exists, the number will be "Increment"ed
+     until an unused dsn if found.  This dsn will also be used if a
+     "Find" data set cannot be found.
+$FIELD @dsni
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+
+     The "First dsn" will be incremented by this value for each
+     successive data set to be added to the wdm file.
+
+$FIELD @ Time
+_TYPE OPTION
+_SET 3
+_WIDTH 11
+_ONOFF @ Table
+_OFFON @ Table
+_HIDE OFF @Ybgn 9 26 9 61
+_HIDE OFF @Yend 10 26 10 61
+_HELP
+
+     The data will be stored in a data set of type time series.  The
+     applications you plan to use will determine the type of data set
+     you should use.
+$FIELD @ Table
+_TYPE OPTION
+_SET 3
+_WIDTH 11
+_ONOFF @ Time
+_OFFON @ Time
+_HIDE ON @Ybgn 9 26 9 61
+_HIDE ON @Yend 10 26 10 61
+_HELP
+
+     The data will be stored in a data set of type table.  The
+     applications you plan to use will determine the type of
+     data set you should use.
+$FIELD @Ybgn
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER,
+   OCTOBER, NOVEMBER, DECEMBER
+_DEFAULT OCTOBER
+_HELP
+     The beginning month for the year or season.  The water year is
+     October-September, climatic year is April-March, calendar year
+     is January-December.  A season might be June-September.  Data
+     values outside a season will not be included.
+$FIELD @Yend
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER,
+   OCTOBER, NOVEMBER, DECEMBER
+_DEFAULT SEPTEMBER
+_HELP
+     The ending month for the year or season.  The water year is
+     October-September, climatic year is April-March, calendar year
+     is January-December.  A season might be June-September.  Data
+     values outside a season will not be included.
+#GROUP   12  TYPE PRM1
+$WINDOW Options (I&O)
+$SCREEN
+
+                    Select data set processing options:
+
+  Confirm processing for:        Data-set status:        Data-set type:
+      @ No data sets                 @ New                   @ Time
+      @ First data set               @ Find                  @ Table
+      @ All data sets                @ Enter
+
+  First dsn: @dsnf
+  Increment: @dsni
+$FIELD @ No
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ First, @ All, @ Enter
+_HELP
+
+     All of the input data will be processed using defaults and
+     available information.  You will have no opportunity to add
+     or modify attributes, choose a dsn or change space allocations.
+$FIELD @ First
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ All, @ Enter
+_HELP
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for the first set of data
+     being processed.  The values you select will be used as defaults
+     for the rest of the sets of data being processed.
+$FIELD @ All
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ First
+_HELP
+
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for all sets of data that
+     are being processed.
+$FIELD @ New
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ Find, @ Enter
+_HELP
+
+     Each new set of data will be placed in a new data set, beginning
+     at "First dsn", and continuing in increments of "Increment".
+
+$FIELD @ Find
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Enter
+_HELP
+     Each new set of data will be placed in an existing data set, which
+     the program will identify as the data is being processed, based on
+     such attributes as TSTYPE, STAID, and ISTAID.  If a unique data
+     set is not found, a new data set will be created.
+$FIELD @ Enter
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Find
+_HELP
+
+     Each new set of data will be placed in an existing data set, which
+     you will be asked to identify as the data is being processed.
+
+$FIELD @dsnf
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+     The "New" input data will be placed in this "First dsn".
+     If this dsn already exists, the number will be "Increment"ed
+     until an unused dsn if found.  This dsn will also be used if a
+     "Find" data set cannot be found.
+$FIELD @dsni
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+
+     The "First dsn" will be incremented by this value for each
+     successive data set to be added to the wdm file.
+
+$FIELD @ Time
+_TYPE OPTION
+_SET 3
+_WIDTH 11
+_ONOFF @ Table
+_OFFON @ Table
+_HELP
+
+     The data will be stored in a data set of type time series.  The
+     applications you plan to use will determine the type of data set
+     you should use.
+$FIELD @ Table
+_TYPE OPTION
+_SET 3
+_WIDTH 11
+_ONOFF @ Time
+_OFFON @ Time
+_HELP
+
+     The data will be stored in a data set of type table.  The
+     applications you plan to use will determine the type of
+     data set you should use.
+#GROUP   13  TYPE PRM1
+$WINDOW Options (I&O)
+$SCREEN
+       Select data set processing options:
+  Confirm processing for:        Data-set status:
+      @ No data sets                 @ New
+      @ First data set               @ Find
+      @ Each station                 @ Enter
+      @ All data sets
+
+  First dsn:       @dsnf
+  Minor increment: @dsni
+  Major increment: @dsnj
+$FIELD @ No
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ First, @ Each, @ All, @ Enter
+_HELP
+
+     All of the input data will be processed using defaults and
+     available information.  You will have no opportunity to add
+     or modify attributes, choose a dsn or change space allocations.
+$FIELD @ First
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ Each, @ All, @ Enter
+_HELP
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for the first set of data
+     being processed.  The values you select will be used as defaults
+     for the rest of the sets of data being processed.
+$FIELD @ Each
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ First, @ All, @ Enter
+_HELP
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for each station being
+     processed.  If a station has more than one set of data, the values
+     you select will be used for all the data sets for that station.
+$FIELD @ All
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ First, @ Each
+_HELP
+
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for all sets of data that
+     are being processed.
+$FIELD @ New
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ Find, @ Enter
+_HELP
+     Each new set of data will be placed in a new data set, beginning
+     at "First dsn", and continuing in increments of "Minor increment"
+     for each new data type for a station, and "Major increment" for
+     different data types for the same station.
+$FIELD @ Find
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Enter
+_HELP
+     Each new set of data will be placed in an existing data set, which
+     the program will identify as the data is being processed, based on
+     such attributes as TSTYPE, STAID, and ISTAID.  If a unique data
+     set is not found, a new data set will be created.
+$FIELD @ Enter
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Find
+_HELP
+
+     Each new set of data will be placed in an existing data set, which
+     you will be asked to identify as the data is being processed.
+
+$FIELD @dsnf
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+     The "New" input data will be placed in this "First dsn".
+     If this dsn already exists, the number will be "Increment"ed
+     until an unused dsn if found.  This dsn will also be used if a
+     "Find" data set cannot be found.
+$FIELD @dsni
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+
+     The "First dsn" will be incremented by this value for each
+     successive new set of data for a station to be added to the
+     wdm file.
+$FIELD @dsnj
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+
+     The "First dsn" will be incremented by this value for each
+     successive new station to be added to the wdm file.
+
+#GROUP   14  TYPE PRM1
+$WINDOW Options (I&O)
+$SCREEN
+ 
+       Select data-set processing options:
+ 
+  Confirm processing for:        Data-set status:
+      @ No data sets                 @ New
+      @ First column                 @ Find
+      @ All columns                  @ Enter
+ 
+  First dsn: @dsnf
+  Increment: @dsni
+$FIELD @ No
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ First, @ All, @ Enter
+_HELP
+ 
+     All of the input data will be processed using defaults and
+     available information.  You will have no opportunity to add
+     or modify attributes, choose a dsn or change space allocations.
+$FIELD @ First
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ All, @ Enter
+_HELP
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for the first column of data
+     being processed.  The values you select will be used as defaults
+     for the rest of the columns of data being processed.
+$FIELD @ All
+_TYPE OPTION
+_SET 1
+_WIDTH 11
+_ONOFF @ No, @ First
+_HELP
+ 
+     You will have the opportunity to modify or add attributes, choose
+     the dsn, and change space allocations for all of the columns of
+     data that are being processed.
+$FIELD @ New
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ Find, @ Enter
+_HELP
+ 
+     Each new column of data will be placed in a new data set, beginning
+     at "First dsn", and continuing in increments of "Increment".
+ 
+$FIELD @ Find
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Enter
+_HELP
+     Each new column of data will be placed in an existing data set, which
+     the program will identify, based on such attributes as TSTYPE, STAID,
+     and ISTAID.  If a unique data set is not found, a new data set will
+     be created.
+$FIELD @ Enter
+_TYPE OPTION
+_SET 2
+_WIDTH 11
+_ONOFF @ New, @ Find
+_HELP
+ 
+     Each new column of data will be placed in an existing data set, which
+     you will be asked to identify as the data is being processed.
+$FIELD @dsnf
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+     The "New" input data will be placed in this "First dsn".
+     If this dsn already exists, the number will be "Increment"ed
+     until an unused dsn if found.  This dsn will also be used if a
+     "Find" data set cannot be found.
+$FIELD @dsni
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:32000
+_DEFAULT 1
+_HELP
+ 
+     The "First dsn" will be incremented by this value for each
+     successive data set to be added to the wdm file.
+ 
+  END DATA
+END CLU
+CLU          104    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  INDSOP
+  END LABEL
+  DATA   CLU   104
+#GROUP    1  TYPE MENU
+$WINDOW Process (I&)
+$SCREEN
+Select a processing option
+
+ Describe data-set:  @Location !
+                     @Space !
+
+Determine data-set:  @Number
+
+Processing options:  @Continue !
+$DEFAULT 5
+$LENGTH 11
+$OPTION Continue
+_DESC processing this input file
+_HELP
+
+     Continue processing this set of data and the rest of the file
+$OPTION Location
+_DESC and description
+_HELP
+
+     Modify and/or confirm location and description attributes
+     for the data set.
+$OPTION Space
+_DESC and time
+_HELP
+
+     Confirm attributes describing time step and form of the time
+     series.  Modify space allocation for data set if desired.
+$OPTION Number
+_HELP
+     Depending on  the data-set status selected from the "Option"
+     window, each input time series can (1) be placed in a new
+     data set, (2) added to a data set with like attributes, or
+     (3) added to an existing data set to be selected.
+#GROUP    2  TYPE MENU
+$WINDOW Process (I&)
+$SCREEN
+Select a processing option
+
+ Describe data-set:  @Location !
+                     @Space !
+
+Determine data-set:  @Number
+
+Processing options:  @Continue !
+$DEFAULT 5
+$LENGTH 11
+$OPTION Continue
+_DESC processing this input file
+_HELP
+
+     Continue processing this set of data and the rest of the file
+$OPTION Location
+_DESC and description
+_HELP
+
+     Modify and/or confirm location and description attributes
+     for the data set.
+$OPTION Space
+_DESC allocation
+_HELP
+
+     Modify space allocation for data set if desired.
+
+$OPTION Number
+_HELP
+
+     Depending on the data-set status selected from the "Option"
+     window, each input time series can (1) be placed in a new
+     data set, (2) added to a data set with like attributes, or
+     (3) added to an existing data set to be selected.
+#GROUP    3  TYPE MENU
+$WINDOW Process (I&)
+$SCREEN
+Select a processing option
+
+ Describe data-set:  @Location !
+                     @Space !
+
+Processing options:  @Continue !
+$DEFAULT 5
+$LENGTH 11
+$OPTION Continue
+_DESC processing this input file
+_HELP
+
+     Continue processing this set of data and the rest of the file
+$OPTION Location
+_DESC and description
+_HELP
+
+     Modify and/or confirm location and description attributes
+     for the data set.
+$OPTION Space
+_DESC and time
+_HELP
+
+     Confirm attributes describing time step and form of the time
+     series.  Modify space allocation for data set if desired.
+#GROUP    4  TYPE MENU
+$WINDOW Process (I&)
+$SCREEN
+Select a processing option
+
+ Describe data set:  @Location !
+                     @Space !
+
+Processing options:  @Continue !
+$DEFAULT 5
+$LENGTH 11
+$OPTION Continue
+_DESC processing this input file
+_HELP
+
+     Continue processing this set of data and the rest of the file
+$OPTION Location
+_DESC and description
+_HELP
+
+     Modify and/or confirm location and description attributes
+     for the data set.
+$OPTION Space
+_DESC allocation
+_HELP
+
+     Modify space allocation for data set if desired.
+
+#GROUP    5  TYPE TEXT
+$WINDOW Continue (I&C)
+$TEXT
+Data for station & being added to dsn &.
+#GROUP   10  TYPE PRM1
+$WINDOW Location and Description (I&L)
+$SCREEN
+Enter or modify optional attributes as desired:
+
+ ISTAID @i1......    STAID  @a1.............
+ TSTYPE @a2.         STANAM @a3.............................................
+
+ LATDEG @r1.....  PARMCD @i2..  STFIPS @i4.  HUCODE @i7.....  DATUM  @r5.....
+ LNGDEG @r2.....  STATCD @i3..  DSCODE @i5.  SITECO @a4.      WELLDP @r6.....
+                                COCODE @i6.  AQTYPE @a5.      BASEQ  @r7.....
+ DAREA  @r3.....                             GUCODE @a6.....
+ CONTDA @r4.....                             AGENCY @a7.....
+$HELP
+ Optional attributes that can be used to describe the data set.
+$FIELD @i1
+_TYPE INTEGER
+_RANGE -999 : -999
+_DEFAULT -999
+_HELP
+ Station number as an integer.  Optional.
+ A value of zero will be taken to mean there is not an
+ integer station number for this data set.
+$FIELD @a1
+_TYPE CHARACTER
+_HELP
+ Station number/identifier as a character string.  Optional.  May contain
+ mixed alpha and numeric characters.  May be a 15-digit latitude-longitude
+ identifier.  A blank field will be taken to mean there is not a character
+ station number for this data set.
+$FIELD @a2
+_TYPE CHARACTER
+_HELP
+ User defined 4-character descriptor describing the contents of the data set.
+ Some models and programs may require a specific value for data sets.
+ ex.:  PRCP, RAIN, SNOW - precipitation, FLOW, DISC, PEAK - discharge
+       TEMP, TMIN, TMAX - temperature    EVAP, PET - evapotranspiration
+$FIELD @a3
+_TYPE CHARACTER
+_HELP
+ Short description of the data set.  Often the station name.
+ A blank field will be taken to mean there is no description for this
+ data set.
+$FIELD @r1
+_TYPE REAL
+_RANGE -999. : -999.
+_DEFAULT -999
+_HELP
+ Station latitude in decimal degrees.  Optional.  A value of zero will be
+ taken to mean no value for LATDEG should be stored in the data set.
+$FIELD @r2
+_TYPE REAL
+_RANGE -999. : -999.
+_DEFAULT -999
+_HELP
+ Station longitude in decimal degrees.  Optional.  A value of zero will be
+ taken to mean no value for LNGDEG should be stored in the data set.
+$FIELD @r3
+_TYPE REAL
+_RANGE 0.0 : -999.
+_DEFAULT -999
+_HELP
+ Total drainage area, including non-contributing areas.  Optional.  A value
+ of zero will be taken to mean no value for DAREA should be stored in the
+ data set.
+$FIELD @r4
+_TYPE REAL
+_RANGE 0.0 : -999.
+_DEFAULT -999.
+_HELP
+ Drainage area that contributes to surface runoff.  Optional.  A value of
+ zero will be taken to mean no value for CONTDA should be stored in the
+ data set.
+$FIELD @i2
+_TYPE INTEGER
+_RANGE 1 : 99999
+_DEFAULT -999
+_HELP
+ Parameter code.  Optional.  A value of zero will be taken to mean no value
+ for PARMCD should be stored in the data set.  See WATSTORE User's Manual
+ Appendix D for a description of valid parameter codes.
+$FIELD @i3
+_TYPE INTEGER
+_RANGE 1 : 99999
+_DEFAULT -999
+_HELP
+ Statistics code.  Optional.  A value of zero will be taken to mean no value
+ for STATCD should be stored in the data set.  See WATSTORE User's Manual
+ Appendix E for a description of valid statistics codes.
+$FIELD @i4
+_TYPE INTEGER
+_RANGE 1 : 99
+_DEFAULT -999
+_HELP
+State FIPS code.  Optional.  A value of zero will be taken to mean there is no
+ code for this data set.  See WATSTORE User's Manual, Appendix B.
+$FIELD @i5
+_TYPE INTEGER
+_RANGE 1 : 99
+_DEFAULT -999
+_HELP
+ State FIPS code of the USGS office that operates the station.  Usually the
+ same as the state code (STFIPS).  A value of zero will be taken to mean there
+ is no code for this data set.  See WATSTORE User's Manual, Appendix B.
+$FIELD @i6
+_TYPE INTEGER
+_RANGE 1 : 999
+_DEFAULT -999
+_HELP
+ County or Parish code.  Optional.  A value of zero will be taken to mean
+ there is no code for this data set.  See WATSTORE User's Manual, Appendix C.
+$FIELD @i7
+_TYPE INTEGER
+_RANGE 1 : 99999999
+_DEFAULT -999
+_HELP
+ Hydrologic unit code.  Optional.  A value of zero will be taken to mean
+ there is no code for this data set.  Codes are given in the USGS map
+ series "Site Hydrologic Unit Maps", Open-File Report 84-708.
+$FIELD @a4
+_TYPE CHARACTER
+_VALID SW,SP,EX,GW,LK,ME
+_HELP
+ Site code.  See WATSTORE User's Manual, volume 1.  Valid entries:
+      SW - stream       GW - well               __ - no value
+      SP - spring       LK - lake or reservoir
+      ES - estuary      ME - meteorologic
+$FIELD @a5
+_TYPE CHARACTER
+_VALID U,N,C,M,X
+_HELP
+ Aquifer type.  See Watstore User's Manual, volume 1, chapter 3.  Valid entries
+     U - unconfined single aquifer           M - confined multiple aquifers
+     N - unconfined multiple aquifers        X - mixed multiple aquifers
+     C - confined single aquifer             _ - no value
+$FIELD @a6
+_TYPE CHARACTER
+_HELP
+ Geologic unit code.  See Watstore User's Manual, Appendix F.
+$FIELD @a7
+_TYPE CHARACTER
+_HELP
+ Agency code.  Optional.  A blank field will be taken to mean there is no
+ code for this data set.  See WATSTORE User's Manual Volume 1, chapter 3
+ for a description of agency codes.
+$FIELD @r5
+_TYPE REAL
+_RANGE -999. : -999.
+_DEFAULT -999.
+_HELP
+ Referenc elevation to mean sea level.  Optional.  A value of zero will be
+ taken to mean the datum is not known.
+$FIELD @r6
+_TYPE REAL
+_RANGE 0.0 : -999.
+_DEFAULT -999.
+_HELP
+ Depth of well.  The greatest depth at which water can enter the well.
+ Optional.  A value of zero will be taken to mean WELLDP is unknown.  See
+ WATSTORE User's Manual, volume 1, chapter 3.
+$FIELD @r7
+_TYPE REAL
+_RANGE 0.0 : -999.
+_DEFAULT -999.
+_HELP
+ Base discharge.  Optional.  A value of zero will be taken to mean BASEQ
+ is unknown.  See WATSTORE Users's manual, volume 1, chapter 3.
+#GROUP   11  TYPE PRM1
+$WINDOW Location and Description (I&L)
+$SCREEN
+Enter or modify optional attributes as desired:
+
+ ISTAID @i1......    STAID  @a1.............
+ TSTYPE @a2.         STANAM @a3.............................................
+
+ STFIPS @i2.
+ DSCODE @i3.
+ AGENCY @a4.....
+$HELP
+ Optional attributes that can be used to describe the data set.
+$FIELD @i1
+_TYPE INTEGER
+_RANGE -999 : -999
+_DEFAULT -999
+_HELP
+ Station number as an integer.  Optional.
+ A value of zero will be taken to mean there is not an
+ integer station number for this data set.
+$FIELD @a1
+_TYPE CHARACTER
+_HELP
+ Station number/identifier as a character string.  Optional.  May contain
+ mixed alpha and numeric characters.  May be a 15-digit latitude-longitude
+ identifier.  A blank field will be taken to mean there is not a character
+ station number for this data set.
+$FIELD @a2
+_TYPE CHARACTER
+_HELP
+ User defined 4-character descriptor describing the contents of the data set.
+ Some models and programs may require a specific value for data sets.
+ ex.:  PRCP, RAIN, SNOW - precipitation, FLOW, DISC, PEAK - discharge
+       TEMP, TMIN, TMAX - temperature    EVAP, PET - evapotranspiration
+$FIELD @a3
+_TYPE CHARACTER
+_HELP
+ Short description of the data set.  Often the station name.
+ A blank field will be taken to mean there is no description for this
+ data set.
+$FIELD @i2
+_TYPE INTEGER
+_RANGE 1 : 99
+_DEFAULT -999
+_HELP
+State FIPS code.  Optional.  A value of zero will be taken to mean there is no
+ code for this data set.  See WATSTORE User's Manual, Appendix B.
+$FIELD @i3
+_TYPE INTEGER
+_RANGE 1 : 99
+_DEFAULT -999
+_HELP
+ State FIPS code of the USGS office that operates the station.  Usually the
+ same as the state code (STFIPS).  A value of zero will be taken to mean there
+ is no code for this data set.  See WATSTORE User's Manual, Appendix B.
+$FIELD @a4
+_TYPE CHARACTER
+_HELP Agency code.  Optional.  A blank field will be taken to mean there is
+ Agency code.  Optional.  A blank field will be taken to mean there is no
+ code for this data set.  See WATSTORE User's Manual Volume 1, chapter 3
+ for a description of agency codes.
+#GROUP   12  TYPE PRM1
+$WINDOW Location and Description (I&L)
+$SCREEN
+Enter or modify optional attributes as desired:
+
+ ISTAID @i1......    STAID  @a1.............
+ TSTYPE @a2.         STANAM @a3.............................................
+
+ XSECLC @r1......  PARMCD @i2...  SEASBG @i4.
+ DEPTH  @r2......  STATCD @i3...  SEASND @i5.
+ LATDEG @r3......
+ LNGDEG @r4......
+$HELP
+ Optional attributes that can be used to describe the data set.
+$FIELD @i1
+_TYPE INTEGER
+_RANGE -999 : -999
+_DEFAULT -999
+_HELP
+ Station number as an integer.  Optional.
+ A value of zero will be taken to mean there is not an
+ integer station number for this data set.
+$FIELD @a1
+_TYPE CHARACTER
+_HELP
+ Station number/identifier as a character string.  Optional.  May contain
+ mixed alpha and numeric characters.  May be a 15-digit latitude-longitude
+ identifier.  A blank field will be taken to mean there is not a character
+ station number for this data set.
+$FIELD @a2
+_TYPE CHARACTER
+_HELP
+ User defined 4-character descriptor describing the contents of the data set.
+ Some models and programs may require a specific value for data sets.
+ ex.:  PRCP, RAIN, SNOW - precipitation, FLOW, DISC, PEAK - discharge
+       TEMP, TMIN, TMAX - temperature    EVAP, PET - evapotranspiration
+$FIELD @a3
+_TYPE CHARACTER
+_HELP
+ Short description of the data set.  Often the station name.
+ A blank field will be taken to mean there is no description for this
+ data set.
+$FIELD @r1
+_TYPE REAL
+_RANGE  -999. : -999.
+_DEFAULT -999.
+_HELP
+ Cross-section locator, idstance in feet from left bank
+ (as determined by vacing downstream)
+$FIELD @r2
+_TYPE REAL
+_RANGE -999 : -999.
+_DEFAULT -999.
+_HELP
+ Sampling depth, in feet, at which observation was made.
+$FIELD @r3
+_TYPE REAL
+_RANGE -999. : -999.
+_DEFAULT -999.
+_HELP
+ Station latitude in decimal degrees.  Optional.  A value of zero will be
+ taken to mean no value for LATDEG should be stored in the data set.
+$FIELD @r4
+_TYPE REAL
+_RANGE -999. : -999.
+_DEFAULT -999.
+_HELP
+ Station longitude in decimal degrees.  Optional.  A value of zero will be
+ taken to mean no value for LNGDEG should be stored in the data set.
+$FIELD @i2
+_TYPE INTEGER
+_RANGE 1 : 99999
+_DEFAULT -999
+_HELP
+ Parameter code.  Optional.  A value of zero will be taken to mean no value
+ for PARMCD should be stored in the data set.  See WATSTORE User's Manual
+ Appendix D for a description of valid parameter codes.
+$FIELD @i3
+_TYPE INTEGER
+_RANGE 1 : 99999
+_DEFAULT -999
+_HELP
+ Statistics code.  Optional.  A value of zero will be taken to mean no value
+ for STATCD should be stored in the data set.  See WATSTORE User's Manual
+ Appendix E for a description of valid statistics codes.
+$FIELD @i4
+_TYPE INTEGER
+_RANGE 1 : 12
+_DEFAULT -999
+_HELP
+ Beginning month of season or year.  Will start on first day of the month.
+ Used to define a specific time period, usually a year.
+$FIELD @i5
+_TYPE INTEGER
+_RANGE 1 : 12
+_DEFAULT -999
+_HELP
+ Ending mont of season or year.  Will end on last day of the month.
+ Used to define a specific time period, usually a year.
+#GROUP   13  TYPE PRM1
+$WINDOW Location and Description (I&L)
+$SCREEN
+Enter or modify optional attributes as desired:
+
+ ISTAID @i1......    STAID  @a1.............
+ TSTYPE @a2.         STANAM @a3.............................................
+
+$HELP
+ Optional attributes that can be used to describe the data set.
+$FIELD @i1
+_TYPE INTEGER
+_RANGE -999 : -999
+_DEFAULT -999
+_HELP
+ Station number as an integer.  Optional.
+ A value of zero will be taken to mean there is not an
+ integer station number for this data set.
+$FIELD @a1
+_TYPE CHARACTER
+_HELP
+ Station number/identifier as a character string.  Optional.  May contain
+ mixed alpha and numeric characters.  May be a 15-digit latitude-longitude
+ identifier.  A blank field will be taken to mean there is not a character
+ station number for this data set.
+$FIELD @a2
+_TYPE CHARACTER
+_HELP
+ User defined 4-character descriptor describing the contents of the data set.
+ Some models and programs may require a specific value for data sets.
+ ex.:  PRCP, RAIN, SNOW - precipitation, FLOW, DISC, PEAK - discharge
+       TEMP, TMIN, TMAX - temperature    EVAP, PET - evapotranspiration
+$FIELD @a3
+_TYPE CHARACTER
+_HELP
+ Short description of the data set.  Often the station name.
+ A blank field will be taken to mean there is no description for this
+ data set.
+#GROUP   20  TYPE PRM1
+$WINDOW Space and Time (I&S)
+$SCREEN
+                           Modify as required:
+
+Time step and form attributes:           Space allocation for data set:
+  base year (TSBYR)        @i8.            Max no. of attributes  @i15 (nsa)
+  time step (TSSTEP,TCODE) @i9. @a10...    Space for attributes   @i16 (nsp)
+  data groups (TGROUP)     @a11...         Max no. of data groups @i17 (ndp)
+  form of data (TSFORM)    @a12........                          -----
+  compression (COMPFG)     @a13.......              nsa + 2*nsp + ndp <= 472
+  variable time (VBTIME)   @a14....
+  filler value (TSFILL)    @r8......
+$FIELD @i8
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:2000
+_DEFAULT 1900
+_HELP
+Base, or starting, year for data group pointers.  The number of group
+pointers is set under the space allocation.  The units of the group
+pointers is TGROUP.  Combined, these parameters determine the period of
+record that can be stored in the data set.  Ex.  TSBYR=1970, TGROUP=Month,
+Max no. of data groups=250 --> period of record is Jan 1970 - Sep 1971 or
+250 months of data.
+$FIELD @i9
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE 1:1440
+_DEFAULT 1
+_HELP
+Time step, in TCODE units
+$FIELD @a10
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID SECOND,MINUTE,HOUR,DAY,MONTH,YEAR
+_DEFAULT DAY
+_HELP
+Time units of the time-series data
+$FIELD @a11
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID HOUR,DAY,MONTH,YEAR,CENTURY
+_DEFAULT DAY
+_HELP
+Units for data group pointers.
+$FIELD @a12
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID MEAN,TOTAL,INSTANTANEOUS,MINIMUM,MAXIMUM
+_DEFAULT MEAN
+_HELP
+Form of the data is:
+ 1 - Mean, over the time step         4 - MInimum of the time step
+ 2 - Total over the time step         5 - MAximum over the time step
+ 3 - Instantaneous at end of time step
+$FIELD @a13
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID COMPRESSED,UNCOMPRESSED
+_DEFAULT COMPRESSED
+_HELP
+Compressed data will take up less space in the WDM file, but may require
+a COPY operation to modify data values.
+$FIELD @a14
+_TYPE CHARACTER
+_PROTECT CORRECT
+_VALID CONSTANT,VARIABLE
+_DEFAULT CONSTANT
+_HELP
+A data set may contain series of data at different time steps.  Such a
+data set would have a Variable time step.  Most data sets will have a
+Constant time step.  Retrieval times are faster for data with Constant
+time step.
+$FIELD @r8
+_TYPE REAL
+_RANGE -999:-999
+_DEFAULT 0.0
+_HELP
+Periods of missing record will be set to the TSFILL value when data
+is retrieved from the data set.
+$FIELD @i15
+_TYPE INTEGER
+_RANGE  8 : 150
+_DEFAULT 50
+_HELP
+Maximum number of attributes that can be stored in the data set.  Once
+the data set is created, this space cannot be increased.
+$FIELD @i16
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  8 : 170
+_DEFAULT 70
+_HELP
+Space allocated for the attributes in the data set.  Must be at least as
+large as the number of attributes that can be stored.  Once the data set
+is created, this value cannot be changed.
+$FIELD @i17
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  1 : 400
+_DEFAULT 150
+_HELP
+Number of data group pointers to be allocated.  This cannot be changed
+once the data set is created.
+#GROUP   21  TYPE PRM1
+$WINDOW Space (I&S)
+$SCREEN
+
+Space allocation for data set:
+
+Max no. of attributes  > @NA (nsa)
+Space for attributes   > @SA (nsp)
+Max no. of data groups > @NG (ndp)
+                       _____
+                 nsa + 2*nsp + ndp <= 472
+
+$FIELD @NA
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  8 : 150
+_DEFAULT 100
+_HELP
+ Maximum number of attributes that can be stored in the
+ data set.  Once the data set is created, this space
+ cannot be increased.
+$FIELD @SA
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  8 : 170
+_DEFAULT 120
+_HELP
+ Space allocated for the attributes in the data set.  Must
+ be at least as large as the number of attributes that can
+ be stored.
+$FIELD @NG
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  1 : 400
+_DEFAULT 10
+_HELP
+ Number of data group pointers to be allocated.  This cannot
+ be changed once the data set is created.
+#GROUP   25  TYPE TEXT
+$WINDOW Allocate error
+$TEXT
+
+  Errors allocating data-set space:
+
+  1.  Number of attributes must be <= space for attributes.
+
+  2.  2 * Number of attributes + space for attributes + number of
+      group pointers must be <= 400.
+
+#GROUP   26  TYPE TEXT
+$WINDOW Allocate error
+$TEXT
+
+  Error allocating data-set space:
+
+  2 * Number of attributes + space for attributes + number of
+  group pointers must be <= 400.
+
+#GROUP   27  TYPE TEXT
+$WINDOW Allocate error
+$TEXT
+
+  Error allocating data-set space:
+
+  Number of attributes must be <= space for attributes.
+
+  END DATA
+END CLU
+CLU           49    TYPE  MESS   NDN   1   NUP   1   NSA  20   NSP  25   NDP 200
+  LABEL
+    GRPNAM  error
+  END LABEL
+  DATA   CLU    49
+#GROUP  141  TYPE TEXT
+$WINDOW Space allocation problem (&&&)
+$TEXT
+More attribute space requested then is needed for
+the number of attributes requested:
+
+ min                                       max
+ ---                                   -------------
+   8 <= number of attributes (nsa)  <= 150
+ nsa <= space for attributes (nsp)  <= nsa+40 <= 170
+#gROUP  142  TYPE TEXT
+$WINDOW Space allocation problem (&&&)
+$TEXT
+Problem with the number of attributes or
+the number of data groups requested:
+
+ min                                   max
+ ---                                   ---
+   8 <= number of attributes (nsa)  <= 150
+ nsa <= space for attributes (nsp)  <= 170
+   1 <= number of data groups (nsp) <= 400
+
+                  2*nsa + nsp + ndp <= 474
+#GROUP  143  TYPE TEXT
+$WINDOW Space allocation problem (&&&)
+$TEXT
+Problem with one or more of the following:
+
+ min                                       max
+ ---                                   -------------
+   8 <= number of attributes (nsa)  <= 150
+ nsa <= space for attributes (nsp)  <= nsa+40 <= 170
+#GROUP  144  TYPE TEXT
+$WINDOW Space allocation problem (&&&)
+$TEXT
+Problem with one or more of the following:
+
+ min                                   max
+ ---                                   ---
+   8 <= number of attributes (nsa)  <= 150
+ nsa <= space for attributes (nsp)  <= 170
+   1 <= number of data groups (nsp) <= 400
+
+                  2*nsa + nsp + ndp <= 474
+  END DATA
+END CLU

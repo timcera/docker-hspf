@@ -1,0 +1,265 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+  clu  grpnam  description
+  ___  ______  _______________________________________
+  126  inflat  interaction for flat file input of attributes
+END COMMENT
+CLU          126    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  INFLAT
+  END LABEL
+  DATA   CLU   126
+#GROUP   10 TYPE PRM1
+$WINDOW Attributes (IA)
+$SCREEN
+  Select a method for entering attribute values:
+    @ Single attribute name/value pair entry      OR
+    @ Column input of attribute values
+
+  File name containing attributes:
+  [@FNAME..........................................................]
+  Number of header lines in file [@IH]
+                                                         @ No new data sets
+  If new data sets encountered, confirm processing for:  @ First new data set
+                                                         @ All new data sets
+$FIELD @ Single
+_TYPE OPTION
+_SET 1
+_WIDTH 40
+_OFFON @ Column
+_HELP
+Toggle this option on to add single attribute values per record
+on the file specified above.  The file should contain only one
+attribute name/value per record.  Entry is free format as long
+as the attribute name preceeds the value.
+$FIELD @ Column
+_TYPE OPTION
+_SET 1
+_WIDTH 34
+_OFFON @ Single
+_HELP
+Toggle this option on to add multiple attributes in column form.
+One of the columns in the file specified above must contain the data-set
+number for the attributes on each record.  The attributes and their
+positions on each record will be defined on the ensuing screen.
+$FIELD @FNAME
+_TYPE FILE
+_VALID STATUS: OLD
+_HELP
+Enter the name of the file containing attribute values.
+$FIELD @IH
+_TYPE INTEGER
+_RANGE 0 : -999
+_DEFAULT 0
+_HELP
+Enter the number of lines (if any) preceeding the start of
+attribute values on the file specified in the previous field.
+$FIELD @ No
+_TYPE OPTION
+_SET 2
+_WIDTH 18
+_ONOFF @ First, @ All
+_HELP
+     All of the input attributes will be processed using defaults
+     for any new data sets.  You will have no opportunity to modify
+     data-set type or space allocations.
+     Defaults:  TYPE - Timeseries,  NSA - 100,  NSP - 120,  NDP - 10
+$FIELD @ First
+_TYPE OPTION
+_SET 2
+_WIDTH 20
+_ONOFF @ No, @ All
+_HELP
+     You will have the opportunity to modify the data-set type and
+     space allocations for any new data sets created during attribute
+     processing.  The values you select will be used as defaults
+     for any other new data sets created during processing.
+$FIELD @ All
+_TYPE OPTION
+_SET 2
+_WIDTH 19
+_ONOFF @ No, @ First
+_HELP
+ 
+     You will have the opportunity to modify the data-set type
+     and change space allocations for any new data sets created
+     during processing.
+#GROUP   20 TYPE PRM1
+$WINDOW Single (IA) Attribute Entry
+$SCREEN
+
+  Data-set number     [@DSN.]
+  NEW or OLD data set [@NORO]
+
+  Replace any existing attribute values on data set(s) [@YON]
+$FIELD @DSN
+_TYPE INTEGER
+_RANGE 1 : 32000
+_HELP
+Enter the data-set number on which you wish to add the attributes from
+the flat file.  The default provided is the first available data set
+on the WDM file.  Data-set numbers may be changed within the flat file
+(a record containing 'DSN 22' would set the current data set to 22).
+$FIELD @NORO
+_TYPE CHARACTER
+_VALID NEW, OLD
+_DEFAULT NEW
+_HELP
+If you want to add attributes to a new data set, enter the number of
+that data set in the previous field and enter NEW in this field.
+If you want to add attributes to an existing data set, enter the number of
+that data set in the previous field and enter OLD in this field.
+$FIELD @YON
+_TYPE CHARACTER
+_VALID NO, YES
+_DEFAULT NO
+_HELP
+Enter NO if you do not want to overwrite any existing attribute values
+encountered during processing of the attributes on the flat file.
+Enter YES if you do want to overwrite any existing attribute values
+encountered during processing of the attributes on the flat file.
+#GROUP   30 TYPE PRM1
+$WINDOW Column (IA) Attribute Entry
+$SCREEN
+
+  Names:  [@NAME1] [@NAME2] [@NAME3] [@NAME4] [@NAME5] [@NAME6] [@NAME7]
+          [@NAME8] [@NAME9] [@NAM10] [@NAM11] [@NAM12] [@NAM13] [@NAM14]
+  Format: [@AFMT...........................................................]
+  Replace any existing attribute values on data sets [@YON]
+
+Beginning of source file:
+$HELP
+Enter the names of attributes as they are found in columns on the
+flat file in the "Names" fields.  One of the fields must be defined
+as DSN to specify the position of the data-set number on each record.
+$FIELD @NAME1
+_TYPE CHARACTER
+$FIELD @NAME2
+_TYPE CHARACTER
+$FIELD @NAME3
+_TYPE CHARACTER
+$FIELD @NAME4
+_TYPE CHARACTER
+$FIELD @NAME5
+_TYPE CHARACTER
+$FIELD @NAME6
+_TYPE CHARACTER
+$FIELD @NAME7
+_TYPE CHARACTER
+$FIELD @NAME8
+_TYPE CHARACTER
+$FIELD @NAME9
+_TYPE CHARACTER
+$FIELD @NAM10
+_TYPE CHARACTER
+$FIELD @NAM11
+_TYPE CHARACTER
+$FIELD @NAM12
+_TYPE CHARACTER
+$FIELD @NAM13
+_TYPE CHARACTER
+$FIELD @NAM14
+_TYPE CHARACTER
+$FIELD @AFMT
+_TYPE CHARACTER
+_HELP
+Enter the format of the attributes to be entered.
+Use V to specify field width and precision of attribute values (e.g. V9.1).
+Use X to skip any number of spaces on a record (e.g. 5X).
+Use F to define field separators followed by either the actual field
+separator character or the ASCII number (9 for tab) for that character.
+If a field is followed by a separator, the field length is not required.
+Example: PREC   1900    6   1
+  use:V,F9,V,F9,V,F9,V  (if Tab used for separators)
+  use:V5,V7,V5,V4       (if fixed field format)
+Repetition is done by preceeding the field definition with a number.
+Examples:  6V8.1    6(V,F9)    (V8.1)--> repeats till end of record
+$FIELD @YON
+_TYPE CHARACTER
+_VALID NO, YES
+_DEFAULT NO
+_HELP
+Enter NO if you do not want to overwrite any existing attribute values
+encountered during processing of the attributes on the flat file.
+Enter YES if you do want to overwrite any existing attribute values
+encountered during processing of the attributes on the flat file.
+#GROUP   31 TYPE TEXT
+$WINDOW Column (IA) Attribute Entry Problem
+$TEXT
+Unable to process attributes without a format.
+
+Be sure to enter a Format in the data field so labeled.
+#GROUP   40 TYPE PRM1
+$WINDOW New data set specifications (IA)
+$SCREEN
+
+    Data-set type [@DSTYPE...]
+
+    Max no. of attributes  [@NSA] (nsa)
+    Space for attributes   [@NSP] (nsp)
+    Max no. of data groups [@NDP] (ndp)
+                          -------
+             nsa + 2*nsp + ndp <= 472
+$FIELD @DSTYPE
+_TYPE CHARACTER
+_VALID TIMESERIES, TABLE
+_DEFAULT TIMESERIES
+_HELP
+Enter the type of data set to which the attributes on the flat file
+will be added.
+$FIELD @NSA
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  8 : 150
+_DEFAULT 100
+_HELP
+ Maximum number of attributes that can be stored in the
+ data set.  Once the data set is created, this space
+ cannot be increased.
+$FIELD @NSP
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  8 : 170
+_DEFAULT 120
+_HELP
+ Space allocated for the attributes in the data set.  Must
+ be at least as large as the number of attributes that can
+ be stored.
+$FIELD @NDP
+_TYPE INTEGER
+_PROTECT CORRECT
+_RANGE  1 : 400
+_DEFAULT 10
+_HELP
+ Number of data group pointers to be allocated.  This cannot
+ be changed once the data set is created.
+#GROUP   41 TYPE TEXT
+$WINDOW New data set (IA) Problem
+$TEXT
+  Unable to create a NEW data set of this number
+  as it already exists.
+
+  If you wish to create a NEW data set,
+  enter the number of a data set which does not exist.
+
+  If you want to use this number data set,
+  change the status from NEW to OLD.
+#GROUP   42 TYPE TEXT
+$TEXT
+
+  For data-set number &, modify as required:
+#GROUP   43 TYPE TEXT
+$WINDOW New data set (IA) Problem
+$TEXT
+  Unable to work with an OLD data set of this number
+  as it does not exist.
+
+  If you wish to use an OLD data set,
+  enter the number of a data set which already exists.
+
+  If you want to use this number data set,
+  change the status from OLD to NEW.
+  END DATA
+END CLU

@@ -1,0 +1,48 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+  clu  grpnam  description
+  ___  ______  _____________________________________________
+  1__  otopt   output data set processing options
+END COMMENT
+CLU          1__    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  INOPT
+  END LABEL
+  DATA   CLU   __3
+#GROUP    1  TYPE MENU
+$WINDOW & (O&)
+$SCREEN
+Select an output option:
+
+@Source
+@Options
+@Process
+
+@Return
+$DEFAULT 1
+$LENGTH 7
+$OPTION Source
+_DESC - open a source file
+_HELP
+Use this option to open a file for input.
+Can also be used to look at ascii files.
+$OPTION Options
+_DESC - for input, output, and processing
+_HELP
+Use to define options related to attributes, data-set
+numbers and how to process the input file.
+$OPTION Process
+_DESC - the input file
+_HELP
+Select Process after the input file has been opened and
+any required attribute and data-set "Options" have been
+defined.
+$OPTION Return
+_DESC - to Input screen
+_HELP
+Select "Return" when you are done processing data or you want
+to process a different kind of file format.
+  END DATA
+END CLU

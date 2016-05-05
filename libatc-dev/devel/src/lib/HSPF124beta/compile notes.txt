@@ -1,0 +1,2 @@
+compile modules using:
+lf90 -nfix <name>.f95 

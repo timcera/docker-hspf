@@ -1,0 +1,294 @@
+DATE
+WDMSFL
+SYSTEM
+COMMENT
+  clu  grpnam  description
+  ___  ______  _______________________________________
+  105  iowdm   main menu and help information for IOWDM
+END COMMENT
+CLU          105    TYPE  MESS   NDN  10   NUP  20   NSA  20   NSP  50   NDP 200
+  LABEL
+    GRPNAM  IOWDM
+  END LABEL
+  DATA   CLU   105
+#GROUP    1  TYPE MENU
+$WINDOW Opening screen
+$SCREEN
+                        U.S. Geological Survey
+                  IOWDM - Input / Output for WDM file
+                       Version 4.1, February 25, 2002
+
+Select an option,                   or
+   @File   - WDM file management       @Help   - information about IOWDM
+   @Input  - new data to WDM file      @Query  - for support
+   @Output - data from WDM file        @Return - to operating system
+$DEFAULT 1
+$LENGTH  6
+$OPTION File
+$OPTION Input
+$OPTION Output
+$OPTION Help
+$OPTION Query
+$OPTION Return
+$HELP
+ IOWDM/AIDE is designed for interactive processing of data in a
+ WDM file.  Data in selected HSPF and WATSTORE card-image formats
+ and user-specified flat file formats can be added to a WDM file.
+ Data in a WDM file can be written to selected WATSTORE formats.
+
+ Although this program has been used by the U.S. Geological
+ Survey, no warranty, expressed or implied, is made by the
+ USGS as to the accuracy and functioning of the program and
+ related program material, nor shall the fact of distribution
+ constitute any such warranty, and no responsibility is
+ assumed by the USGS in connection therewith.
+
+#GROUP    2  TYPE TEXT
+$WINDOW Query (Q)
+$TEXT
+   Technical support:  Kate Flynn (h2osoft@usgs.gov)
+Program availability:  http://water.usgs.gov/software/ (surface water)
+
+               Other: Kate Flynn
+                      Hydrologic Analysis Software Support
+                      U.S. Geological Survey, WRD
+                      437 National Center
+                      Reston, VA 20192
+#GROUP    3  TYPE TEXT
+$WINDOW Input (I) ERROR
+$TEXT
+   No WDM file is open.
+   A WDM file must be open to input data.
+
+  Choose either
+
+     File Open (FO) option to open an existing WDM file
+  or
+     File Build (FB) option to build a new WDM file.
+#GROUP    4  TYPE TEXT
+$WINDOW Output (O) ERROR
+$TEXT
+   No WDM file is open.
+   A WDM file must be open and contain data to output data.
+
+   Choose
+
+      File Open (FO) option to open an existing WDM file.
+#GROUP    5  TYPE TEXT
+$WINDOW Output (O) ERROR
+$TEXT
+
+  The Output option is not yet available.
+
+#GROUP   10  TYPE FILE
+$WINDOW Source (I&S)
+$SCREEN
+
+
+      Name of file for input?
+
+      @FILE...........................................................
+$NAME @FILE
+$STATUS OLD
+$ACCESS SEQUENTIAL
+$FORM FORMATTED
+$HELP
+ Enter the name of the file to be read.
+#GROUP   11  TYPE PRM1
+$WINDOW Open (IO)
+$SCREEN
+
+                  Enter name of output file.
+
+  [@File...........................................................]
+$FIELD @File
+_TYPE   FILE
+_VALID STATUS: UNKNOWN
+_HELP
+Name of file to be opened for summary of input proccessing.
+If the file exists, it will be overwritten.
+#GROUP   12  TYPE PRM1
+$WINDOW Open (IO)
+$SCREEN
+
+ The file [@OldFile........................................................]
+ is already open, to continue writing to this use Prev (function key F4).
+
+ To close this file and write to a new one, enter the new name below and
+ use Accept (function key F2)
+
+
+          [@NewFile........................................................]
+$FIELD @NewFile
+_TYPE   FILE
+_VALID STATUS: UNKNOWN
+_HELP
+Name of file to be opened for summary of input proccessing.
+If the file exists, it will be overwritten.
+$FIELD @OldFile
+_TYPE CHARACTER
+_PROTECT PROTECT
+_HELP
+This file has already been opened for summary output.
+To continue using it for ouput, use Prev (Funciton key F4).
+To close this file and open a new one, enter a new file name in the
+next field and use Accept (Function key F2)
+#GROUP   20  TYPE MENU
+$WINDOW Help (H)
+$SCREEN
+       Select a subject for help information:
+
+@Program                           @Watstore
+@File                              @Generic
+
+@Input
+@Output                            @Return
+$DEFAULT 2
+$LENGTH  8
+$OPTION Return
+_DESC - to opening screen
+$OPTION Program
+_DESC - general description
+$OPTION File
+_DESC - WDM files
+$OPTION Input
+_DESC - formats
+$OPTION Output
+_DESC - formats
+$OPTION Watstore
+_DESC - supported formats
+$OPTION Generic
+_DESC - supported forms
+$HELP
+
+  For any of the menu items selected, a brief description
+  about the item will be displayed.
+
+#GROUP   21  TYPE TEXT
+$WINDOW Program (HP)
+$TEXT
+
+  The IOWDM program is used to:
+
+  1.  read data in selected formats and write it
+      to a wdm file
+
+  2.  read data from a wdm file and write it in a
+      selected ascii formats
+
+#GROUP   22  TYPE TEXT
+$WINDOW File (HF)
+$TEXT
+
+  The FILE opion on the main menu is used to manage WDM files:
+
+      1.  Open and existing file
+      2.  Build a new wdm file
+      3.  Close an open wdm file
+      4.  Summarize contents of a wdm file
+
+#GROUP   23  TYPE TEXT
+$WINDOW Input (HI)
+$TEXT
+
+  IOWDM can read ascii files in the following formats:
+
+      1.  Watstore - daily and unit
+      2.  generic flat file
+
+
+#GROUP   24  TYPE TEXT
+$WINDOW Output (HO)
+$TEXT
+
+  The output option is not currently implemented in IOWDM
+
+#GROUP   25  TYPE TEXT
+$WINDOW Watstore (HW)
+$TEXT
+Watstore data in the following formats can be processed:
+
+1.  daily values, with or without station header records
+2.  unit values, with or without station header records
+3.  basin characteristics
+4.  peak flow values , with or without station header records
+5.  n-day high and low flow values
+
+Files may contain one or more stations.
+All data for a given station must be contiguous in the file.
+#GROUP   26  TYPE TEXT
+$WINDOW Generic (HG)
+$TEXT
+Time-series data in the following simple formats can be processed:
+
+  1.  columnar, fixed fields, or delimitted
+  2.  simple lists
+
+Attribute data in the following simple formats can be processed:
+
+  1.  tabular
+  2.  list with attribute names
+
+#GROUP   51  TYPE MENU
+$WINDOW Input (I)
+$SCREEN
+Select an Input option:
+       @Open       - a summary output file (optional)
+       @Timeseries - generic flat file input
+       @Attributes - generic flat file input
+       @Daily      - WATSTORE card-image input
+       @Unit       - WATSTORE card-image input
+       @Basin      - characterisitcs WATSTORE card-image input
+       @Peak       - flow WATSTORE card-image input
+       @N-day      - high and/or low flow WATSTORE card-image input
+       @Return     - to opening screen
+$DEFAULT 9
+$LENGTH 10
+$OPTION Return
+_HELP
+ Leave the input portion of the program, returning to the
+ opening screen.
+$OPTION Daily
+_HELP
+ Standard Watstore daily values card image file.
+$OPTION Unit
+_HELP
+ Standard Watstore unit values card image file
+$OPTION Basin
+_HELP
+ Standard Watstore basin characteristics card image file
+$OPTION Peak
+_HELP
+ Standard Watstore annual peak flows card image file
+$OPTION N-day
+_HELP
+ Standard Watstore n-day high and low flows card image file
+$OPTION Timeseries
+_HELP
+ Generic flat file of a single time series.  The user specifies the format
+ and time parameters.  One or more values will be read from each record.
+$OPTION Attributes
+_HELP
+ Generic flat file input of attribute values.  Input may be by single
+ attribute name/value pairs per record or by column format with an
+ associated data set for each record.
+$OPTION Open
+_HELP
+Optional output file for printing of processing summary.
+If no file is opened, the summary will be written to the
+ERROR.FIL file.
+#GROUP   52  TYPE TEXT
+$WINDOW Input error (I_)
+$TEXT
+
+  The requested input option has not been implemented.
+
+#GROUP   58  TYPE FILE
+$WINDOW Other (O) Flat file
+$SCREEN
+
+ Enter the name of the file containing the flat file import/export directives:
+ @INFIL..........................................................
+$NAME @INFIL
+  END DATA
+END CLU

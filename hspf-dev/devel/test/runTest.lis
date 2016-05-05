@@ -1,0 +1,4 @@
+runTest
+ init
+ all
+ basedir:'/sjr/beodata/models/hspf/src/hspf-12.2/test'

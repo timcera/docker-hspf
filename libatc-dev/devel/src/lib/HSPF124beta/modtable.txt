@@ -1,0 +1,39 @@
+# This file contains Lahey LF90 module information
+# Created on Thu Oct 10 11:18:47 2013
+# Each line contains the module name, followed by the DOS file
+# name used to store module information and library object
+# data files, followed by the name of the sourcefile for the module.
+# Lines beginning with # are comments.
+datasizespecs datasiz0 DataSizeSpecs.f95
+consts consts consts.f95
+macros macros macros.f95
+error error error.f95
+moddatetime moddate0 datetime.f95
+text text text.f95
+keywords keyword0 keywords.f95
+enums enums enums.f95
+infil infil infil.f95
+objects objects objects.f95
+globals globals globals.f95
+swmm5futil swmm5fu0 swmm5futil.f95
+headers headers headers.f95
+report report report.f95
+modclimate modclim0 climate.f95
+findroot findroo0 findroot.f95
+xsectdat xsectda0 XsectDat.f95
+modxsect modxsec0 xsect.f95
+forcemain forcema0 forcemain.f95
+modlink modlink link.f95
+dynwave dynwave dynwave.f95
+modflowrout modflow0 flowrout.f95
+modtable modtabl0 table.f95
+modinflow modinfl0 inflow.f95
+modmassbal modmass0 massbal.f95
+modnode modnode node.f95
+output output output.f95
+rain rain rain.f95
+modtoposort modtopo0 toposort.f95
+modstats modstat0 stats.f95
+modrouting modrout0 routing.f95
+swmm5f swmm5f swmm5f.f95
+treatmnt treatmn0 treatmnt.f95

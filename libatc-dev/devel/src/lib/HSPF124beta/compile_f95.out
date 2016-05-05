@@ -1,0 +1,975 @@
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file DataSizeSpecs.f95.
+Compiling program unit DATASIZESPECS at line 1.
+Encountered 0 errors, 0 warnings in file DataSizeSpecs.f95.
+
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file consts.f95.
+Compiling program unit CONSTS at line 1.
+Encountered 0 errors, 0 warnings in file consts.f95.
+
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file macros.f95.
+Compiling program unit MACROS at line 1.
+Encountered 0 errors, 0 warnings in file macros.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file error.f95.
+Compiling program unit ERROR at line 1.
+Encountered 0 errors, 0 warnings in file error.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file datetime.f95.
+Compiling program unit MODDATETIME at line 2.
+Line 347, file datetime.f95
+    integer ::  yr, mon, day, n, stat
+                              |
+WARNING -- INTEGER scalar (N) is never used.
+
+Line 359, file datetime.f95
+            read(s, fmt=200, iostat=stat) yr, sep1, mon, sep2, day
+                                              |          |
+WARNING -- CHARACTER scalar (SEP1) is set but never used.
+WARNING -- CHARACTER scalar (SEP2) is set but never used.
+
+Line 407, file datetime.f95
+    if (d == -DateDelta) then
+        |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 428, file datetime.f95
+    integer ::  n, hr, min, sec, stat
+                |
+WARNING -- INTEGER scalar (N) is never used.
+
+Encountered 0 errors, 5 warnings in file datetime.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file text.f95.
+Compiling program unit TEXT at line 1.
+Encountered 0 errors, 0 warnings in file text.f95.
+
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file keywords.f95.
+Compiling program unit KEYWORDS at line 2.
+Encountered 0 errors, 0 warnings in file keywords.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file enums.f95.
+Compiling program unit ENUMS at line 1.
+Encountered 0 errors, 0 warnings in file enums.f95.
+
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file infil.f95.
+Compiling program unit INFIL at line 1.
+Encountered 0 errors, 0 warnings in file infil.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file objects.f95.
+Compiling program unit OBJECTS at line 3.
+Encountered 0 errors, 0 warnings in file objects.f95.
+
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file globals.f95.
+Compiling program unit GLOBALS at line 2.
+Encountered 0 errors, 0 warnings in file globals.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file swmm5futil.f95.
+Compiling program unit SWMM5FUTIL at line 1.
+Encountered 0 errors, 0 warnings in file swmm5futil.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file headers.f95.
+Compiling program unit HEADERS at line 9.
+Encountered 0 errors, 0 warnings in file headers.f95.
+
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file report.f95.
+Compiling program unit REPORT at line 1.
+Line 1289, file report.f95
+subroutine report_writeErrorMsg(errCode, s)
+                                         |
+WARNING -- CHARACTER scalar (S) is set but never used.
+
+Line 1349, file report.f95
+subroutine report_writeWarningMsg(msg, id)
+                                  |    |
+WARNING -- CHARACTER scalar (MSG) is set but never used.
+WARNING -- CHARACTER scalar (ID) is set but never used.
+
+Encountered 0 errors, 3 warnings in file report.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file climate.f95.
+Compiling program unit MODCLIMATE at line 1.
+Encountered 0 errors, 0 warnings in file climate.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file findroot.f95.
+Compiling program unit FINDROOT at line 1.
+Line 77, file findroot.f95
+            if ( xlo == x ) exit
+                 |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 84, file findroot.f95
+            if ( mTemp == x ) exit
+                 |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 156, file findroot.f95
+            if ( SIGN(fm, fnew) /= fm) then
+                 |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 161, file findroot.f95
+            else if ( SIGN(flo, fnew) /= flo ) then
+                      |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 164, file findroot.f95
+            else if ( SIGN(fhi, fnew) /= fhi) then
+                      |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Encountered 0 errors, 5 warnings in file findroot.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file XsectDat.f95.
+Compiling program unit XSECTDAT at line 1.
+Encountered 0 errors, 0 warnings in file XsectDat.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file xsect.f95.
+Compiling program unit MODXSECT at line 1.
+Line 1315, file xsect.f95
+    if ( (s <= xsect%sMax .and. s >= xsect%sFull) .and. xsect%sMax /=
+xsect%sFull ) then
+                                                        |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 1333, file xsect.f95
+    lVal = findroot_Newton(a1, a2, a, tol, evalSofA)
+    |
+WARNING -- INTEGER scalar (LVAL) is set but never used.
+
+Line 1519, file xsect.f95
+    j1 = 0
+    |
+WARNING -- INTEGER scalar (J1) is set but never used.
+
+Line 1520, file xsect.f95
+    j2 = nItems
+    |
+WARNING -- INTEGER scalar (J2) is set but never used.
+
+Line 2752, file xsect.f95
+real(kind=dp) function filled_circ_getAofY(xsect, y)
+                                                  |
+WARNING -- REAL(kind 8) scalar (Y) is set but never used.
+
+Encountered 0 errors, 5 warnings in file xsect.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file forcemain.f95.
+Compiling program unit FORCEMAIN at line 1.
+Encountered 0 errors, 0 warnings in file forcemain.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file link.f95.
+Compiling program unit MODLINK at line 1.
+Line 239, file link.f95
+    real(kind=dpl) :: aa, timestep
+                      |
+WARNING -- REAL(kind 8) scalar (AA) is never used.
+
+Line 240, file link.f95
+    real(kind=dpl) :: lengthFactor, roughness, mSlope                   
+!(5.0.018 - LR)
+                      |             |          |
+WARNING -- REAL(kind 8) scalar (LENGTHFACTOR) is never used.
+WARNING -- REAL(kind 8) scalar (ROUGHNESS) is never used.
+WARNING -- REAL(kind 8) scalar (MSLOPE) is never used.
+
+Line 247, file link.f95
+    err = ERR_REGULATOR_SHAPE
+    |
+WARNING -- INTEGER scalar (ERR) is set but never used.
+
+Line 260, file link.f95
+    call orifice_setSetting(j, timestep);                                    
+!//(5.0.010 - LR)
+                               |
+WARNING -- REAL(kind 8) scalar (TIMESTEP) is used but never set.
+
+Line 624, file link.f95
+    if ( moffset == MISSING ) then
+         |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 1218, file link.f95
+        lVal = xsect_setParams(arrLink(j)%xsect, 0, lp, 0.0d00)
+        |
+WARNING -- LOGICAL scalar (LVAL) is set but never used.
+
+Line 1245, file link.f95
+    real(kind=dpl) :: area, q, tp, xmult
+                               |
+WARNING -- REAL(kind 8) scalar (TP) is never used.
+
+Line 1419, file link.f95
+        if ( dir == 1.0 ) then
+             |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 1581, file link.f95
+real(kind=dpl) function outlet_getFlow(k, head)
+                                       |  |
+WARNING -- INTEGER scalar (K) is set but never used.
+WARNING -- REAL(kind 8) scalar (HEAD) is set but never used.
+
+Line 1593, file link.f95
+    integer ::    m
+                  |
+WARNING -- INTEGER scalar (M) is never used.
+
+Line 1594, file link.f95
+    real(kind=dpl) :: h
+                      |
+WARNING -- REAL(kind 8) scalar (H) is never used.
+
+Line 1988, file link.f95
+        if ( dir == 1.0 ) then
+             |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Encountered 0 errors, 15 warnings in file link.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file dynwave.f95.
+Compiling program unit DYNWAVE at line 4.
+Encountered 0 errors, 0 warnings in file dynwave.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file table.f95.
+Compiling program unit MODTABLE at line 1.
+Encountered 0 errors, 0 warnings in file table.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file inflow.f95.
+Compiling program unit MODINFLOW at line 1.
+Line 194, file inflow.f95
+    integer ::    month, day, hour    !(5.0.014 - LR)
+                  |      |    |
+WARNING -- INTEGER scalar (MONTH) is never used.
+WARNING -- INTEGER scalar (DAY) is never used.
+WARNING -- INTEGER scalar (HOUR) is never used.
+
+Line 204, file inflow.f95
+    p = inflow%basePat
+    |
+WARNING -- INTEGER scalar (P) is set but never used.
+
+Encountered 0 errors, 4 warnings in file inflow.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file massbal.f95.
+Compiling program unit MODMASSBAL at line 1.
+Line 261, file massbal.f95
+    integer ::    j
+                  |
+WARNING -- INTEGER scalar (J) is never used.
+
+Line 263, file massbal.f95
+    gwArea = 0.0
+    |
+WARNING -- REAL(kind 8) scalar (GWAREA) is set but never used.
+
+Line 298, file massbal.f95
+real(kind=dp) function massbal_getBuildup(p)
+                                          |
+WARNING -- INTEGER scalar (P) is set but never used.
+
+Line 308, file massbal.f95
+    integer ::    i, j
+                  |  |
+WARNING -- INTEGER scalar (I) is never used.
+WARNING -- INTEGER scalar (J) is never used.
+
+Encountered 0 errors, 5 warnings in file massbal.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file node.f95.
+Compiling program unit NODE_SETPARAMS at line 94.
+Line 139, file node.f95
+        if (x(6) == 1) then
+            |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Compiling program unit NODE_VALIDATE at line 174.
+Compiling program unit NODE_INITINFLOW at line 200.
+Compiling program unit NODE_INITSTATE at line 229.
+Compiling program unit NODE_SETOLDQUALSTATE at line 288.
+Compiling program unit NODE_GETVOLUME at line 323.
+Compiling program unit NODE_GETSURFAREA at line 352.
+Compiling program unit NODE_GETOUTFLOW at line 375.
+Line 375, file node.f95
+real(kind=kind(1.d0)) function node_getOutflow(j, k)
+                                                  |
+WARNING -- INTEGER scalar (K) is set but never used.
+
+Line 390, file node.f95
+    real(kind=dp) :: divider_getOutflow, storage_getOutflow
+                     |                   |
+WARNING -- REAL(kind 8) scalar (DIVIDER_GETOUTFLOW) is never used.
+WARNING -- REAL(kind 8) scalar (STORAGE_GETOUTFLOW) is never used.
+
+Compiling program unit NODE_GETMAXOUTFLOW at line 404.
+Compiling program unit NODE_GETSYSTEMOUTFLOW at line 428.
+Compiling program unit NODE_GETRESULTS at line 480.
+Compiling program unit NODE_SETOLDHYDSTATE at line 522.
+Compiling program unit NODE_SETOUTLETDEPTH at line 538.
+Compiling program unit NODE_GETPONDEDAREA at line 600.
+Compiling program unit NODE_GETLOSSES at line 634.
+Line 634, file node.f95
+real(kind=kind(1.d0)) function node_getLosses( j,  tStep)                    
+!(5.0.019 - LR)
+                                                   |
+WARNING -- REAL(kind 8) scalar (TSTEP) is set but never used.
+
+Compiling program unit STORAGE_GETSURFAREA at line 942.
+Line 942, file node.f95
+real(kind=kind(1.d0)) function storage_getSurfArea(j, d)
+                                                      |
+WARNING -- REAL(kind 8) scalar (D) is set but never used.
+
+Compiling program unit OUTFALL_SETOUTLETDEPTH at line 1372.
+Line 1388, file node.f95
+    real(kind=dp) ::   x, y                     ! x,y values in table
+                          |
+WARNING -- REAL(kind 8) scalar (Y) is never used.
+
+Line 1395, file node.f95
+    real(kind=dp) :: table_tseriesLookup, table_lookup
+                     |                    |
+WARNING -- REAL(kind 8) scalar (TABLE_TSERIESLOOKUP) is never used.
+WARNING -- REAL(kind 8) scalar (TABLE_LOOKUP) is never used.
+
+Line 1419, file node.f95
+        k = Outfall(i)%tideCurve
+        |
+WARNING -- INTEGER scalar (K) is set but never used.
+
+Encountered 0 errors, 10 warnings in file node.f95.
+
+386|LINK: 9.1fix1 -- Copyright (C) 1986-98 Phar Lap Software, Inc.
+Error LINK.3230: Undefined symbol "_lc__FLG2RT" in module "LFINITWC.C" at
+                 location 00014FBA.
+Error LINK.3230: Undefined symbol "_lf_main" in module "LFINITWC.C" at
+                 location 00015090.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file flowrout.f95.
+Compiling program unit FLOWROUT_INIT at line 59.
+Compiling program unit FLOWROUT_CLOSE at line 92.
+Compiling program unit FLOWROUT_GETROUTINGSTEP at line 109.
+Compiling program unit FLOWROUT_EXECUTE at line 133.
+Line 156, file flowrout.f95
+    integer :: steadyflow_execute, kinwave_execute
+               |                   |
+WARNING -- INTEGER scalar (STEADYFLOW_EXECUTE) is never used.
+WARNING -- INTEGER scalar (KINWAVE_EXECUTE) is never used.
+
+Line 188, file flowrout.f95
+        n1 = arrLink(j)%node1
+        |
+WARNING -- INTEGER scalar (N1) is set but never used.
+
+Line 200, file flowrout.f95
+        arrLink(j)%newFlow = qout
+        |
+WARNING -- REAL(kind 8) scalar (QOUT) is used but never set.
+
+Compiling program unit VALIDATETREELAYOUT at line 221.
+Compiling program unit VALIDATEGENERALLAYOUT at line 291.
+Compiling program unit INITNODEDEPTHS at line 354.
+Compiling program unit INITLINKDEPTHS at line 411.
+Compiling program unit INITNODES at line 449.
+Compiling program unit INITLINKS at line 503.
+Compiling program unit GETLINKINFLOW at line 560.
+Compiling program unit GETSTORAGEOUTFLOW at line 671.
+Compiling program unit UPDATENODEDEPTH at line 782.
+Compiling program unit STEADYFLOW_EXECUTE at line 820.
+Encountered 0 errors, 4 warnings in file flowrout.f95.
+
+386|LINK: 9.1fix1 -- Copyright (C) 1986-98 Phar Lap Software, Inc.
+Error LINK.3230: Undefined symbol "NODE_GETVOLUME" in module "flowrout.f95" at
+                 location 00013A66.
+Error LINK.3230: Undefined symbol "NODE_GETMAXOUTFLOW" in module
+                 "flowrout.f95" at location 00014BE9.
+Error LINK.3230: Undefined symbol "_lc__FLG2RT" in module "LFINITWC.C" at
+                 location 000156E2.
+Error LINK.3230: Undefined symbol "_lf_main" in module "LFINITWC.C" at
+                 location 000157B8.
+Error LINK.3230: Undefined symbol "NODE_GETPONDEDAREA" in module
+                 "INITNODESTATE" at location 0001D362.
+Error LINK.3230: Undefined symbol "NODE_GETSURFAREA" in module "INITNODESTATE"
+                 at location 0001D401.
+Error LINK.3230: Undefined symbol "NODE_GETLOSSES" in module "SETNODEDEPTH" at
+                 location 0001EB84.
+Error LINK.3230: Undefined symbol "NODE_GETVOLUME" in module "SETNODEDEPTH" at
+                 location 0001F2A7.
+Error LINK.3230: Undefined symbol "NODE_GETMAXOUTFLOW" in module
+                 "GETMODPUMPFLOW" at location 0002003C.
+Error LINK.3230: Undefined symbol "NODE_GETMAXOUTFLOW" in module
+                 "GETMODPUMPFLOW" at location 00020078.
+Error LINK.3230: Undefined symbol "NODE_GETOUTFLOW" in module "LINK_GETINFLOW"
+                 at location 000244AA.
+Error LINK.3230: Undefined symbol "NODE_SETOUTLETDEPTH" in module
+                 "LINK_SETOUTFALLDEPTH" at location 00024F8B.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file output.f95.
+Compiling program unit OUTPUT at line 1.
+Line 488, file output.f95
+    date = reportDate
+    |
+WARNING -- REAL(kind 8) scalar (DATE) is set but never used.
+
+Line 631, file output.f95
+subroutine output_saveID(id, file)
+                         |   |
+WARNING -- CHARACTER scalar (ID) is set but never used.
+WARNING -- INTEGER scalar (FILE) is set but never used.
+
+Line 649, file output.f95
+subroutine output_saveSubcatchResults(aReportTime, file)
+                                      |            |
+WARNING -- REAL(kind 8) scalar (AREPORTTIME) is set but never used.
+WARNING -- INTEGER scalar (FILE) is set but never used.
+
+Line 660, file output.f95
+    integer ::      j
+                    |
+WARNING -- INTEGER scalar (J) is never used.
+
+Line 661, file output.f95
+    real(kind=dp) ::   f, area
+                       |  |
+WARNING -- REAL(kind 8) scalar (F) is never used.
+WARNING -- REAL(kind 8) scalar (AREA) is never used.
+
+Line 662, file output.f95
+    real :: totalArea
+            |
+WARNING -- REAL scalar (TOTALAREA) is never used.
+
+Line 663, file output.f95
+    real(kind=dp) :: reportDate
+                     |
+WARNING -- REAL(kind 8) scalar (REPORTDATE) is never used.
+
+Line 709, file output.f95
+subroutine output_saveNodeResults(aReportTime, file)
+                                               |
+WARNING -- INTEGER(kind 2) scalar (FILE) is set but never used.
+
+Line 811, file output.f95
+subroutine output_saveLinkResults(aReportTime, file)
+                                               |
+WARNING -- INTEGER(kind 2) scalar (FILE) is set but never used.
+
+Line 891, file output.f95
+subroutine output_readDateTime(period, days)
+                               |
+WARNING -- INTEGER scalar (PERIOD) is set but never used.
+
+Line 910, file output.f95
+subroutine output_readSubcatchResults(period, index)
+                                      |       |
+WARNING -- INTEGER scalar (PERIOD) is set but never used.
+WARNING -- INTEGER scalar (INDEX) is set but never used.
+
+Line 929, file output.f95
+subroutine output_readNodeResults(period, index)
+                                  |       |
+WARNING -- INTEGER scalar (PERIOD) is set but never used.
+WARNING -- INTEGER scalar (INDEX) is set but never used.
+
+Line 948, file output.f95
+subroutine output_readLinkResults(period, index)
+                                  |       |
+WARNING -- INTEGER scalar (PERIOD) is set but never used.
+WARNING -- INTEGER scalar (INDEX) is set but never used.
+
+Encountered 0 errors, 19 warnings in file output.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file project.f95.
+Compiling program unit PROJECT_OPEN at line 2.
+Compiling program unit INITPOINTERS at line 19.
+Line 30, file project.f95
+    deallocate(Gage,stat=stat)
+                         |
+WARNING -- INTEGER scalar (STAT) is set but never used.
+
+Compiling program unit SETDEFAULTS at line 60.
+Compiling program unit OPENFILES at line 188.
+Compiling program unit PROJECT_READINPUT at line 238.
+Compiling program unit PROJECT_VALIDATE at line 292.
+Line 308, file project.f95
+         if ( err /= 0 ) call report_writeErrorMsg(ERR_CURVE_SEQUENCE,
+Curve(i)%ID)
+              |
+WARNING -- INTEGER scalar (ERR) is used but never set.
+
+Compiling program unit PROJECT_ADDOBJECT at line 388.
+Line 388, file project.f95
+integer function project_addObject(objtype, id, n)
+                 |                 |        |   |
+WARNING -- INTEGER scalar (PROJECT_ADDOBJECT) is used but never set.
+WARNING -- INTEGER scalar (OBJTYPE) is set but never used.
+WARNING -- CHARACTER scalar (ID) is set but never used.
+WARNING -- INTEGER scalar (N) is set but never used.
+
+Line 400, file project.f95
+    integer ::  mresult
+                |
+WARNING -- INTEGER scalar (MRESULT) is never used.
+
+Line 401, file project.f95
+    integer ::  strlen
+                |
+WARNING -- INTEGER scalar (STRLEN) is never used.
+
+Line 402, file project.f95
+    character(20) :: newID
+                     |
+WARNING -- CHARACTER scalar (NEWID) is never used.
+
+Compiling program unit CREATEOBJECTS at line 424.
+Line 437, file project.f95
+    integer :: j, k
+                  |
+WARNING -- INTEGER scalar (K) is never used.
+
+Compiling program unit DELETEOBJECTS at line 601.
+Line 616, file project.f95
+    integer :: j, k
+               |  |
+WARNING -- INTEGER scalar (J) is never used.
+WARNING -- INTEGER scalar (K) is never used.
+
+Compiling program unit PROJECT_INIT at line 757.
+Encountered 0 errors, 12 warnings in file project.f95.
+
+386|LINK: 9.1fix1 -- Copyright (C) 1986-98 Phar Lap Software, Inc.
+Error LINK.3230: Undefined symbol "NODE_VALIDATE" in module "project.f95" at
+                 location 0001240B.
+Error LINK.3230: Undefined symbol "NODE_INITSTATE" in module "project.f95" at
+                 location 0001395B.
+Error LINK.3230: Undefined symbol "_lc__FLG2RT" in module "LFINITWC.C" at
+                 location 000139E2.
+Error LINK.3230: Undefined symbol "_lf_main" in module "LFINITWC.C" at
+                 location 00013AB8.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file rain.f95.
+Compiling program unit RAIN at line 1.
+Line 127, file rain.f95
+    integer :: i
+               |
+WARNING -- INTEGER scalar (I) is never used.
+
+Line 131, file rain.f95
+    count = 0
+    |
+WARNING -- INTEGER scalar (COUNT) is set but never used.
+
+Encountered 0 errors, 2 warnings in file rain.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file toposort.f95.
+Compiling program unit MODTOPOSORT at line 1.
+Encountered 0 errors, 0 warnings in file toposort.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file stats.f95.
+Compiling program unit MODSTATS at line 1.
+Line 294, file stats.f95
+    integer :: j
+               |
+WARNING -- INTEGER scalar (J) is never used.
+
+Encountered 0 errors, 1 warning in file stats.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file routing.f95.
+Compiling program unit MODROUTING at line 1.
+Line 274, file routing.f95
+    character*10, allocatable, dimension(:) :: t10
+                                               |
+WARNING -- CHARACTER array (T10) is never used.
+
+Line 299, file routing.f95
+        if ( arrLink(j)%targetSetting /= arrLink(j)%setting ) then  !(5.0.010
+- LR)         
+             |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Line 438, file routing.f95
+logical function systemHasChanged(routingModel)
+                                  |
+WARNING -- INTEGER scalar (ROUTINGMODEL) is set but never used.
+
+Encountered 0 errors, 3 warnings in file routing.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file swmm5f.f95.
+Compiling program unit SWMM5F at line 1.
+Line 115, file swmm5f.f95
+integer function swmm_open(f1, f2, f3)
+                           |   |   |
+WARNING -- CHARACTER scalar (F1) is set but never used.
+WARNING -- CHARACTER scalar (F2) is set but never used.
+WARNING -- CHARACTER scalar (F3) is set but never used.
+
+Line 226, file swmm5f.f95
+                    theDay = elapsedTime
+                    |
+WARNING -- INTEGER(kind 2) scalar (THEDAY) is set but never used.
+
+Line 227, file swmm5f.f95
+                    theHour = (elapsedTime - floor(elapsedTime)) * 24.0
+                    |
+WARNING -- INTEGER(kind 2) scalar (THEHOUR) is set but never used.
+
+Line 309, file swmm5f.f95
+    lstat = project_init()
+    |
+WARNING -- INTEGER scalar (LSTAT) is set but never used.
+
+Line 400, file swmm5f.f95
+subroutine execRouting(elapsedTime, outfl, sdatim)
+                       |
+WARNING -- REAL(kind 8) scalar (ELAPSEDTIME) is set but never used.
+
+Encountered 0 errors, 7 warnings in file swmm5f.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file qualrout.f95.
+Compiling program unit QUALROUT_EXECUTE at line 45.
+Line 69, file qualrout.f95
+        vAvg = (Node(j)%oldVolume + Node(j)%newVolume) / 2.0
+        |
+WARNING -- REAL(kind 8) scalar (VAVG) is set but never used.
+
+Compiling program unit GETMIXEDQUAL at line 124.
+Compiling program unit FINDLINKMASSFLOW at line 164.
+Compiling program unit FINDNODEQUAL at line 200.
+Compiling program unit FINDLINKQUAL at line 231.
+Line 296, file qualrout.f95
+    if (qIn == qOut) then
+        |
+WARNING -- Floating-point comparisons for equality may produce inconsistent
+results.
+
+Compiling program unit FINDSFLINKQUAL at line 320.
+Compiling program unit FINDSTORAGEQUAL at line 370.
+Compiling program unit UPDATEHRT at line 427.
+Compiling program unit GETREACTEDQUAL at line 460.
+Encountered 0 errors, 2 warnings in file qualrout.f95.
+
+386|LINK: 9.1fix1 -- Copyright (C) 1986-98 Phar Lap Software, Inc.
+Error LINK.3230: Undefined symbol "_lc__FLG2RT" in module "LFINITWC.C" at
+                 location 00012EA6.
+Error LINK.3230: Undefined symbol "_lf_main" in module "LFINITWC.C" at
+                 location 00012F7C.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file treatmnt.f95.
+Compiling program unit TREATMNT at line 1.
+Encountered 0 errors, 0 warnings in file treatmnt.f95.
+
+LM Version 4.00d -- Copyright (C) 1988-1998, Lahey Computer Systems, Inc.
+Lahey Fortran 90 Compiler Release 4.50i  S/N: F9358012  
+Copyright (C) 1994-1999 Lahey Computer Systems.  All rights reserved.
+Copyright (C) 1985-1999 Intel Corp.  All rights reserved.
+Registered to:	Paul Duda                              
+		AQUA TERRA Consultants                 
+Compiling file driver.f95.
+Compiling program unit TONGMAIN at line 1.
+Line 68, file driver.f95
+      integer :: J, LTYPE, ITS, NTS, DTS, DELTS
+                           |    |    |    |
+WARNING -- INTEGER scalar (ITS) is never used.
+WARNING -- INTEGER scalar (NTS) is never used.
+WARNING -- INTEGER scalar (DTS) is never used.
+WARNING -- INTEGER scalar (DELTS) is never used.
+
+Line 78, file driver.f95
+      real(kind=dpm) :: ROVOL, OVOL, VOLT, VOL, ROS, OS, RO, O
+                        |      |     |     |    |    |   |   |
+WARNING -- REAL(kind 8) scalar (ROVOL) is never used.
+WARNING -- REAL(kind 8) scalar (OVOL) is never used.
+WARNING -- REAL(kind 8) scalar (VOLT) is never used.
+WARNING -- REAL(kind 8) scalar (VOL) is never used.
+WARNING -- REAL(kind 8) scalar (ROS) is never used.
+WARNING -- REAL(kind 8) scalar (OS) is never used.
+WARNING -- REAL(kind 8) scalar (RO) is never used.
+WARNING -- REAL(kind 8) scalar (O) is never used.
+
+Line 105, file driver.f95
+      real(kind=dpmain), dimension(NNODE-1) :: disFrac
+                                               |
+WARNING -- REAL(kind 8) array (DISFRAC) is never used.
+
+Line 106, file driver.f95
+      real(kind=dpmain) :: INVOL
+                           |
+WARNING -- REAL(kind 8) scalar (INVOL) is never used.
+
+Line 162, file driver.f95
+        XC(1) = CLEN(J)
+        |
+WARNING -- REAL(kind 8) array (XC) is set but never used.
+
+Line 172, file driver.f95
+             CNODE1 = 1
+             |
+WARNING -- INTEGER scalar (CNODE1) is set but never used.
+
+Line 173, file driver.f95
+             CNODE2 = 2
+             |
+WARNING -- INTEGER scalar (CNODE2) is set but never used.
+
+Line 206, file driver.f95
+        isOK = xsect_setParams(arrLink(j)%xsect, CSHAPE(J), XX, UCF(LENGTH)) 
+!for normal conduit
+        |
+WARNING -- LOGICAL scalar (ISOK) is set but never used.
+
+Line 457, file driver.f95
+      lErrorCode = swmm_run('', '', '', messu, datim)
+      |                                 |      |
+WARNING -- INTEGER scalar (LERRORCODE) is set but never used.
+WARNING -- INTEGER scalar (MESSU) is used but never set.
+WARNING -- INTEGER array (DATIM) is used but never set.
+
+Encountered 0 errors, 21 warnings in file driver.f95.
+
+386|LINK: 9.1fix1 -- Copyright (C) 1986-98 Phar Lap Software, Inc.
+Error LINK.3230: Undefined symbol "INITPOINTERS" in module "driver.f95" at
+                 location 00011173.
+Error LINK.3230: Undefined symbol "CREATEOBJECTS" in module "driver.f95" at
+                 location 00011178.
+Error LINK.3230: Undefined symbol "SETDEFAULTS" in module "driver.f95" at
+                 location 0001117D.
+Error LINK.3230: Undefined symbol "NODE_SETPARAMS" in module "driver.f95" at
+                 location 00011410.
+Error LINK.3230: Undefined symbol "_lc__FLG2RT" in module "LFINITWC.C" at
+                 location 00016FD2.
+Error LINK.3230: Undefined symbol "_lf_main" in module "LFINITWC.C" at
+                 location 000170A8.
+Error LINK.3230: Undefined symbol "PROJECT_READINPUT" in module "SWMM_OPEN" at
+                 location 00020730.
+Error LINK.3230: Undefined symbol "PROJECT_VALIDATE" in module "SWMM_OPEN" at
+                 location 0002073E.
+Error LINK.3230: Undefined symbol "PROJECT_INIT" in module "SWMM_START" at
+                 location 0002083A.
+Error LINK.3230: Undefined symbol "NODE_GETRESULTS" in module
+                 "OUTPUT_SAVENODERESULTS" at location 000250D6.
+Error LINK.3230: Undefined symbol "FLOWROUT_GETROUTINGSTEP" in module
+                 "ROUTING_GETROUTINGSTEP" at location 0003052A.
+Error LINK.3230: Undefined symbol "FLOWROUT_INIT" in module "ROUTING_OPEN" at
+                 location 000306F4.
+Error LINK.3230: Undefined symbol "NODE_SETOLDQUALSTATE" in module
+                 "ROUTING_EXECUTE" at location 0003095D.
+Error LINK.3230: Undefined symbol "NODE_SETOLDHYDSTATE" in module
+                 "ROUTING_EXECUTE" at location 00030BDB.
+Error LINK.3230: Undefined symbol "NODE_INITINFLOW" in module
+                 "ROUTING_EXECUTE" at location 00030BEB.
+Error LINK.3230: Undefined symbol "FLOWROUT_EXECUTE" in module
+                 "ROUTING_EXECUTE" at location 00030C2E.
+Error LINK.3230: Undefined symbol "QUALROUT_EXECUTE" in module
+                 "ROUTING_EXECUTE" at location 00030C57.
+Error LINK.3230: Undefined symbol "TIMADD" in module "ROUTING_EXECUTE" at
+                 location 00030D3B.
+Error LINK.3230: Undefined symbol "NODE_GETSYSTEMOUTFLOW" in module
+                 "REMOVEOUTFLOWS" at location 00031F5E.
+Error LINK.3230: Undefined symbol "TABLE_INTERPOLATE" in module
+                 "TABLE_TSERLOOKUP2" at location 00035921.

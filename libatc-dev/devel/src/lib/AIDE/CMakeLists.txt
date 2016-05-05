@@ -1,0 +1,121 @@
+
+
+# ANINIT.FOR
+# #ANINIT_M.FOR
+# PRTAID.FOR
+# QTCHAR.FOR
+# QTFILE.FOR
+# QTNUMB.FOR
+# QTNUMS.FOR
+# QTSCN1.FOR
+# QTSTGT.FOR
+# UTMISC.FOR
+# #UTMISC_M.FOR
+# UTUPRM.FOR
+# Z0UTIL.FOR
+# #Z0UTIL_M.FOR
+# Z1UTIL.FOR
+# Z4UTIL.FOR
+# #Z4UTIL_M.FOR
+# ZCBCH1.FOR
+# ZCBCH2.FOR
+# ZCBCH3.FOR
+# ZCBCH4.FOR
+# ZCBCH5.FOR
+# ZCBCH6.FOR
+# ZCBCH7.FOR
+# ZCBCH8.FOR
+# ZCBCH9.FOR
+# ZCBEX1.FOR
+# ZCBEX2.FOR
+# ZCBEX3.FOR
+# ZCBEX4.FOR
+# ZCBEX5.FOR
+# ZCBEX6.FOR
+# ZCBEX7.FOR
+# ZCBEX8.FOR
+# ZCBEX9.FOR
+# ZCBFL1.FOR
+# ZCBFL2.FOR
+# ZCBFL3.FOR
+# ZCBFL4.FOR
+# ZCBFL5.FOR
+# ZCBFL6.FOR
+# ZCBFL7.FOR
+# ZCBFL8.FOR
+# ZCBFL9.FOR
+# ZCLBAK.FOR
+# ZSYSDG.FOR ZSYSPC.FOR ZSYSPR.FOR ZSYSVX.FOR
+# ZTSCN1.FOR
+# ZUTIL.FOR
+# #ZUTIL_M.FOR
+# ZUTILX.FOR
+# ZUTILY.FOR
+# #ZUTILY_M.FOR
+
+set(
+    SRCS
+        ANINIT.FOR
+        PRTAID.FOR
+        QTCHAR.FOR
+        QTFILE.FOR
+        QTNUMB.FOR
+        QTNUMS.FOR
+        QTSCN1.FOR
+        QTSTGT.FOR
+        UTMISC.FOR
+        UTUPRM.FOR
+        Z0UTIL.FOR
+        Z1UTIL.FOR
+        Z4UTIL.FOR
+        #ZCBCH1.FOR   # DUMMY, real one in ANN/PGENER.FOR
+        ZCBCH2.FOR
+        ZCBCH3.FOR
+        ZCBCH4.FOR
+        ZCBCH5.FOR
+        ZCBCH6.FOR
+        ZCBCH7.FOR
+        ZCBCH8.FOR
+        ZCBCH9.FOR
+        ZCBEX1.FOR
+        ZCBEX2.FOR
+        ZCBEX3.FOR
+        ZCBEX4.FOR
+        ZCBEX5.FOR
+        ZCBEX6.FOR
+        ZCBEX7.FOR
+        ZCBEX8.FOR
+        ZCBEX9.FOR
+        #ZCBFL1.FOR   # DUMMY, real one in ANN/PGENER.FOR
+        ZCBFL2.FOR
+        ZCBFL3.FOR
+        ZCBFL4.FOR
+        ZCBFL5.FOR
+        ZCBFL6.FOR
+        ZCBFL7.FOR
+        ZCBFL8.FOR
+        ZCBFL9.FOR
+        ZCLBAK.FOR
+        ZTSCN1.FOR
+        ZUTIL.FOR
+        ZUTILX.FOR
+        ZUTILY.FOR
+    )
+
+if (UNIX)
+    set(
+        SRCS
+            ${SRCS}
+            ZSYSDG.FOR
+        )
+endif ()
+
+if (WIN32)
+    set(
+        SRCS
+            ${SRCS}
+            ZSYSPC.FOR
+        )
+endif ()
+
+include(../abspath.cmake)

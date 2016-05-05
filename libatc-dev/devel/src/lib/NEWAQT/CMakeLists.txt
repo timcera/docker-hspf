@@ -1,0 +1,101 @@
+
+
+# AGMAP.FOR
+# DAMAP.FOR
+# DSNSEL.FOR
+# DSPECI.FOR
+# DURANI.FOR
+# DURBAT.FOR
+# EXSUTL.FOR
+# FTABAT.FOR
+# FTABCR.FOR
+# GRMAP.FOR
+# HGET.FOR
+# HSPSTA.FOR
+# MAPSEG.FOR
+# MPSBAT.FOR
+# PRWPLT.FOR
+# SCNUTL.FOR
+# SGDATE.FOR
+# SGLABL.FOR
+# SGLIST.FOR
+# SGTABL.FOR
+# STSPEC.FOR
+# STSPUT.FOR
+# STURBN.FOR
+# TSFREQ.FOR
+# TSPLOT.FOR
+# UCDOIT.FOR
+# UCGETM.FOR
+# UCIBAT.FOR
+# UCIMOD.FOR
+# UCIREA.FOR
+# UCIREPT.FOR
+# UCIWRT.FOR
+# UCPUTM.FOR
+# UCSUPR.FOR
+# UTCLAS.FOR
+# UTDIR.FOR
+# UTMAP.FOR
+# UTPLOT.FOR
+# UTWIN.FOR
+# WATINP.FOR
+# WDMAP.FOR
+# WSGSIM.FOR
+# WSGSYS.FOR
+# WSGUTL.FOR
+
+#add_library(newaqt
+set(SRCS
+        AGMAP.FOR
+        DAMAP.FOR
+        DSNSEL.FOR
+        DSPECI.FOR
+        DURANI.FOR
+        DURBAT.FOR
+        EXSUTL.FOR
+        FTABAT.FOR
+        FTABCR.FOR
+        GRMAP.FOR
+        HGET.FOR
+        MAPSEG.FOR
+        MPSBAT.FOR
+        PRWPLT.FOR
+        SCNUTL.FOR
+        SGDATE.FOR
+        SGLABL.FOR
+        SGLIST.FOR
+        SGTABL.FOR
+        STSPEC.FOR
+        STSPUT.FOR
+        STURBN.FOR
+        TSFREQ.FOR
+        TSPLOT.FOR
+        UCDOIT.FOR
+        UCGETM.FOR
+        UCIBAT.FOR
+        UCIMOD.FOR
+        UCIREA.FOR
+        UCIREPT.FOR
+        UCIWRT.FOR
+        UCPUTM.FOR
+        UCSUPR.FOR
+        UTCLAS.FOR
+        UTDIR.FOR
+        UTMAP.FOR
+        UTPLOT.FOR
+        UTWIN.FOR
+        WATINP.FOR
+        WDMAP.FOR
+        WSGSIM.FOR
+        WSGSYS.FOR
+        WSGUTL.FOR)
+
+#if (UNIX)
+    set(SRCS
+        HSPSTA.FOR # Windows version in HASSLIBS
+        ${SRCS}
+        )
+#endif()
+
+include(../abspath.cmake)

@@ -1,0 +1,15 @@
+
+EXTRA_DIST = 
+SUBDIRS = 
+
+AM_FFLAGS = -I../common
+
+SUFFIXES = .f
+.f.o:
+	$(F77COMPILE) -c $<
+
+lib_LTLIBRARIES   = libanne_awstat.la
+
+libanne_awstat_la_LDFLAGS = -fPIC
+libanne_awstat_la_SOURCES = a193.f a193io.f a193pl.f a193ut.f pa193.inc pkplot.f \
+                      pmxpk.inc profdr.f stutil.f tscbat.f tscmpr.f
